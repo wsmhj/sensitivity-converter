@@ -7,3 +7,5 @@ out/
 *.log
 coverage/
 docs/qa/downloads/
+
+.vercel/
