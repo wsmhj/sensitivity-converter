@@ -9,6 +9,13 @@
   --soft: #edf0fc;
   --result: var(--soft);
   --result-line: #ccd3ed;
+  --compare-accent: #176f68;
+  --compare-surface: #e8f2ee;
+  --save-accent: #8b542b;
+  --save-surface: #f2e9db;
+  --save-line: #d8c9b2;
+  --practice-surface: #292838;
+  --practice-accent: #ded6ff;
   --sans: Arial, Helvetica, sans-serif;
   --mono: 'Cascadia Code', Consolas, monospace;
   color-scheme: light;
@@ -39,6 +46,11 @@ html[data-theme='dark'] {
   --accent: #a4b5ff;
   --on-accent: #1d2440;
   --result-line: #485477;
+  --compare-accent: #9acfc3;
+  --compare-surface: #233b37;
+  --save-accent: #e6bb8e;
+  --save-surface: #332d25;
+  --save-line: #5b4c3c;
   color-scheme: dark;
 }
 a {

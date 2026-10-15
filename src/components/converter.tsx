@@ -444,6 +444,20 @@ export default function Converter({
 
   return (
     <>
+      <nav className="workspace-nav" aria-label="Workspace tools">
+        <a href="#converter" className="workspace-convert">
+          <span aria-hidden="true">⇄</span> Convert
+        </a>
+        <a href="#compare" className="workspace-compare">
+          <span aria-hidden="true">≋</span> Compare games
+        </a>
+        <a href="#saved-profiles" className="workspace-save">
+          <ProfileIcon kind="save" /> Saved setups
+        </a>
+        <a href="#practice" className="workspace-practice">
+          <span aria-hidden="true">↗</span> Practice
+        </a>
+      </nav>
       <section className="converter" id="converter" aria-label="Mouse sensitivity converter">
         <div className="tool-toolbar">
           <div className="segmented" aria-label="Source input format">
@@ -815,43 +829,6 @@ export default function Converter({
             <p className="calculation-body">Enter valid values to see the actual calculation.</p>
           )}
         </details>
-        <div className="practice-launch">
-          <div>
-            <strong>Test your setup</strong>
-            <p>Try a 60-second FPS practice check, compare rounds, and refine your setup.</p>
-          </div>
-          <button
-            type="button"
-            className="action-primary"
-            data-analytics-id="open_aim_test"
-            disabled={!r}
-            onClick={() => setPractice(true)}
-          >
-            ◎ Test this setup
-          </button>
-        </div>
-        {practice && r && (
-          <AimTrainer
-            settings={s}
-            result={r}
-            previous={practiceScores}
-            onUpdateScore={(updated) =>
-              setPracticeScores((items) =>
-                items.map((item) => (item.id === updated.id ? updated : item)),
-              )
-            }
-            onApply={(scale) => reverse(String(r.targetSens * scale))}
-            onComplete={(score) => setPracticeScores((items) => [...items, score].slice(-12))}
-            onClose={() => {
-              setPractice(false);
-              requestAnimationFrame(() =>
-                document
-                  .querySelector<HTMLButtonElement>('[data-analytics-id="open_aim_test"]')
-                  ?.focus({ preventScroll: true }),
-              );
-            }}
-          />
-        )}
         <div className="tool-actions">
           <button
             data-analytics-id="share_settings"
@@ -870,35 +847,6 @@ export default function Converter({
             Print report
           </button>
           <a href="#saved-profiles">Save a profile ↓</a>
-        </div>
-        <div className="converter-feedback">
-          <div>
-            <strong>Help improve this converter</strong>
-            <p>Report a problem or suggest an improvement.</p>
-          </div>
-          <button
-            type="button"
-            data-analytics-id="open_feedback"
-            data-feedback-open
-            aria-haspopup="dialog"
-            className="feedback-open-button"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z" />
-              <path d="M8 10h8M8 14h5" />
-            </svg>
-            Give feedback<span aria-hidden="true">↗</span>
-          </button>
         </div>
         <p className="local-note">
           Settings are saved in this browser. Share links include your setup. File exports send the
@@ -974,9 +922,52 @@ export default function Converter({
           </button>
         ))}
       </div>
+      <div className="practice-launch" id="practice">
+        <div>
+          <span className="practice-label">Practice range</span>
+          <strong>Put your settings to the test.</strong>
+          <p>Try a 60-second FPS practice check, compare rounds, and refine your setup.</p>
+        </div>
+        <button
+          type="button"
+          className="action-primary"
+          data-analytics-id="open_aim_test"
+          disabled={!r}
+          onClick={() => setPractice(true)}
+        >
+          ◎ Test this setup
+        </button>
+      </div>
+      {practice && r && (
+        <AimTrainer
+          settings={s}
+          result={r}
+          previous={practiceScores}
+          onUpdateScore={(updated) =>
+            setPracticeScores((items) =>
+              items.map((item) => (item.id === updated.id ? updated : item)),
+            )
+          }
+          onApply={(scale) => reverse(String(r.targetSens * scale))}
+          onComplete={(score) => setPracticeScores((items) => [...items, score].slice(-12))}
+          onClose={() => {
+            setPractice(false);
+            requestAnimationFrame(() =>
+              document
+                .querySelector<HTMLButtonElement>('[data-analytics-id="open_aim_test"]')
+                ?.focus({ preventScroll: true }),
+            );
+          }}
+        />
+      )}
       <section className="utility-grid" aria-label="Compare and save settings">
         <div className="comparison" id="compare">
-          <h2>Compare your game sensitivities</h2>
+          <div className="module-heading">
+            <span className="module-symbol" aria-hidden="true">
+              ≋
+            </span>
+            <h2>Compare games</h2>
+          </div>
           <p>Reference hipfire values at your target DPI. This table always uses 360° matching.</p>
           <input
             type="search"
@@ -1028,7 +1019,10 @@ export default function Converter({
           </div>
         </div>
         <div className="saved" id="saved-profiles">
-          <h2>Keep a setup for later</h2>
+          <div className="module-heading">
+            <ProfileIcon kind="save" />
+            <h2>Saved setups</h2>
+          </div>
           <p>Save up to 20 profiles on this device. No account or cloud sync.</p>
           <label className="numeric-field">
             <span className="field-label">Profile name</span>
@@ -1201,6 +1195,35 @@ export default function Converter({
           </div>
         </div>
       </section>
+      <div className="converter-feedback">
+        <div>
+          <strong>Help improve this converter</strong>
+          <p>Report a problem or suggest an improvement.</p>
+        </div>
+        <button
+          type="button"
+          data-analytics-id="open_feedback"
+          data-feedback-open
+          aria-haspopup="dialog"
+          className="feedback-open-button"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z" />
+            <path d="M8 10h8M8 14h5" />
+          </svg>
+          Give feedback<span aria-hidden="true">↗</span>
+        </button>
+      </div>
     </>
   );
 }

@@ -1,3 +1,11 @@
+# 2026-10-15 最新调整：按功能建立视觉分区
+
+用户认为设计变化不明显、多个功能采用同一种配色。本轮增加四个功能导航入口；转换目标区使用浅蓝背景，比较表格使用青色表头及标识，保存区采用暖砂色面板及棕色保存按钮，练习入口独立为深色紫灰横幅。练习入口移出转换区，反馈条移至辅助功能区之后。高级设置和正文维持中性色，颜色同时配合标题和形态区分功能。
+
+本地127.0.0.1:3000已重新构建并启动；实际HTTP返回的新HTML/CSS包含四个分区。63项测试、lint、类型检查、格式、构建及页面检查通过。浏览器连接仍超时，视觉截图和真实交互验收未完成。用户正在查看的地址尚未确认；正式域名未部署，不能把本地更新说成线上更新。
+
+---
+
 # Current concept — game transfer desk (2026-10-15)
 
 User rejected both the decorative firing-range design and the generic minimal form. Approved trying a new two-column editorial comparison desk: warm paper #f5f3ee/#fdfcf9, ink #232323, cobalt #3454d1; no neon, precision-ruler motif, target illustration or decorative animation.

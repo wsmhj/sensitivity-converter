@@ -1,4 +1,5 @@
 /* Turnmatch transfer desk: an editorial, two-column comparison sheet. */
+
 body {
   font-family: var(--sans);
 }
@@ -776,5 +777,186 @@ td {
   }
   .utility-grid {
     gap: 24px;
+  }
+}
+
+/* Functional zones share typography, but have different visual roles. */
+.workspace-nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.workspace-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--paper);
+}
+.workspace-nav a:hover {
+  border-color: currentColor;
+}
+.workspace-nav svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.workspace-nav span {
+  font-size: 22px;
+  line-height: 1;
+}
+.workspace-nav .workspace-convert {
+  color: var(--accent);
+  background: var(--soft);
+  border-color: var(--result-line);
+}
+.workspace-nav .workspace-compare {
+  color: var(--compare-accent);
+}
+.workspace-nav .workspace-save {
+  color: var(--save-accent);
+}
+.workspace-nav .workspace-practice {
+  color: var(--ink);
+}
+.target-column {
+  background: var(--soft);
+}
+.target-column .game-menu {
+  background: var(--paper);
+}
+.target-column .target-dpi input {
+  background: var(--paper);
+}
+.comparison {
+  --accent: var(--compare-accent);
+  --soft: var(--compare-surface);
+  padding: 28px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--compare-accent);
+  border-radius: 4px;
+}
+.module-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.module-heading h2 {
+  margin: 0;
+}
+.module-heading > svg {
+  width: 24px;
+  height: 24px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.module-symbol {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  background: var(--soft);
+  color: var(--accent);
+  font-size: 26px;
+  border-radius: 4px;
+}
+.comparison th {
+  background: var(--compare-surface);
+  color: var(--compare-accent);
+}
+.comparison td:first-child,
+.comparison th:first-child {
+  padding-left: 12px;
+}
+.comparison .export-form button {
+  color: var(--compare-accent);
+}
+.saved {
+  --accent: var(--save-accent);
+  --soft: var(--save-surface);
+  --line: var(--save-line);
+  padding: 28px;
+  background: var(--save-surface);
+  border: 1px solid var(--save-line);
+  border-radius: 4px;
+}
+.saved > .action-primary,
+html[data-theme='dark'] .saved > .action-primary {
+  background: var(--save-accent);
+  color: var(--on-accent);
+  border-color: var(--save-accent);
+  border-radius: 4px;
+}
+.saved > .action-primary:hover:not(:disabled) {
+  background: var(--save-accent);
+  filter: brightness(0.95);
+}
+.saved .empty {
+  background: transparent;
+  border-style: dashed;
+  border-radius: 4px;
+}
+.saved .profile-backup button {
+  border-radius: 4px;
+}
+.utility-grid {
+  gap: 24px;
+  margin-top: 0;
+}
+.advanced,
+.calculation,
+.measurement-tools {
+  background: var(--paper);
+  padding-inline: 18px;
+}
+.converter-feedback {
+  margin: 32px 0 12px;
+}
+@media (max-width: 760px) {
+  .workspace-nav {
+    gap: 8px;
+  }
+  .workspace-nav a {
+    font-size: 12px;
+    gap: 6px;
+    padding-inline: 8px;
+  }
+  .comparison,
+  .saved {
+    padding: 22px;
+  }
+  .practice-launch {
+    padding: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .workspace-nav {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 24px;
+  }
+  .workspace-nav a {
+    justify-content: flex-start;
+    padding-inline: 14px;
+    font-size: 13px;
+  }
+  .comparison,
+  .saved {
+    padding: 18px;
+  }
+}
+@media print {
+  .workspace-nav,
+  .converter-feedback {
+    display: none !important;
   }
 }
