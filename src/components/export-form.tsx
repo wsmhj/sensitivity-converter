@@ -1,0 +1,2 @@
+'use client';
+export default function ExportForm({kind,payload,disabled,children}:{kind:'report'|'csv'|'profiles';payload:string;disabled:boolean;children:React.ReactNode}){return <form method="post" action="/api/export" className="export-form"><input type="hidden" name="kind" value={kind}/><input type="hidden" name="payload" value={payload}/><button data-analytics-id={`export_${kind}`} type="submit" disabled={disabled}>{children}</button></form>}

@@ -1,0 +1,4 @@
+import type {Metadata} from 'next';
+import {site} from '@/lib/site';
+export const metadata:Metadata={title:'Contact',alternates:{canonical:'/contact'}};
+export default function Contact(){return <article className="info-page"><h1>Contact</h1>{site.email?<p>Send corrections or feedback to <a href={`mailto:${site.email}`}>{site.email}</a>.</p>:<p>A public contact address has not been configured for this local preview.</p>}<h2>Reporting a conversion issue</h2><p>Include both game profiles, source sensitivity or distance, source and target DPI, matching method, custom coefficients and the result you measured. The downloadable report keeps these conditions together.</p><p>A share link contains your selected setup. Review its contents before sending it. Do not include passwords or other private information.</p><a href="/#converter">Return to the converter</a></article>}
