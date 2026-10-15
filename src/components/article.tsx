@@ -1,10 +1,12 @@
+import { GAMES } from '@/lib/conversion';
+
 export const faqs = [
   [
     'How do I convert VALORANT sensitivity to CS2?',
     'At equal DPI, multiply by 0.07 ÷ 0.022. VALORANT 0.35 becomes CS2 1.1136363636 using the listed reference values. Enter both DPI values when they differ.',
   ],
   [
-    'How do I convert 800 DPI sensitivity to 1600 DPI?',
+    'How does the DPI sensitivity converter handle 800 to 1600 DPI?',
     'For the same linear game profile, halve sensitivity when doubling DPI. A setting of 1.2 at 800 DPI becomes 0.6 at 1600 DPI.',
   ],
   [
@@ -24,11 +26,11 @@ export const faqs = [
     'They may use different yaw coefficients, FOV conventions or rounding rules. This VALORANT reference uses 0.07; some tools use 0.06996. Compare assumptions as well as the answer.',
   ],
   [
-    'Does this support ADS?',
+    'Can I use this as an ADS sensitivity converter?',
     'The scoped-distance helper estimates proportional ADS settings from your own measurements. It does not automatically translate every game’s optic, weapon or zoom multiplier.',
   ],
   [
-    'Does this work for controllers?',
+    'Does this mouse sensitivity converter support controllers?',
     'No. Analog-stick dead zones, response curves and acceleration cannot be mapped to a mouse with a universal ratio. These profiles are for PC mouse input.',
   ],
   [
@@ -48,11 +50,11 @@ export const faqs = [
 const sections = [
   {
     id: 'how-it-works',
-    title: 'How to convert your sensitivity',
+    title: 'How to use the game sensitivity converter',
     parts: [
       [
         'Enter your current setup',
-        'Choose your source game, enter its in-game sensitivity, and set your actual mouse DPI. Choose the target game and its DPI. The result updates immediately. Fortnite uses the displayed percentage: enter 4 for 4%, not 0.04.',
+        'Choose your source game, enter its in-game sensitivity, and set your actual mouse DPI. Choose the target game and its DPI. This FPS sensitivity converter calculates a reference setting immediately using the selected mouse-input scales. Fortnite uses the displayed percentage: enter 4 for 4%, not 0.04.',
       ],
       [
         'Apply and verify',
@@ -65,8 +67,38 @@ const sections = [
     ],
   },
   {
+    id: 'supported-games',
+    title: 'Supported PC games and sensitivity profiles',
+    parts: [
+      [
+        'CS2 and VALORANT sensitivity converter',
+        'Convert CS2 sensitivity to VALORANT or use the same tool as a VALORANT to CS2 sensitivity converter. Enter the actual DPI for each setup rather than assuming they match. The CS2 profile uses the default m_yaw; the VALORANT reference uses 0.07. Worked examples below show both directions and explain the reference-scale difference.',
+      ],
+      [
+        'Fortnite to Overwatch or Apex Legends',
+        'For Fortnite sensitivity conversion, enter the percentage displayed in the mouse settings. Choose Overwatch 2 or Apex Legends as the target to match a full physical turn, or swap the games to convert back. This uses PC mouse hipfire settings, not controller sensitivity, building multipliers or per-weapon ADS settings.',
+      ],
+      [
+        'Apex Legends and Overwatch 2 mouse settings',
+        'The Apex sensitivity converter uses the default hipfire scale. Overwatch 2 uses a separate reference scale, so equal sensitivity numbers or equal eDPI do not mean equal turn distance. For Overwatch to Apex conversion, compare the resulting cm/360 and verify the turn in both games. Scoped hero settings and per-optic multipliers are separate.',
+      ],
+      [
+        'Rainbow Six Siege sensitivity converter',
+        'The Rainbow 6 Siege profile assumes MouseSensitivityMultiplierUnit 0.02 and the integer horizontal sensitivity slider from 1 to 100. Use the rounding helper to see how the nearest allowed value affects turn distance. A modified multiplier requires a yaw override; this is not an automatic Siege ADS converter.',
+      ],
+      [
+        'Call of Duty and Warzone PC hipfire',
+        'Choose Call of Duty / Warzone for the standard PC mouse hipfire reference scale. Enter your sensitivity and DPI, then select the destination game. Check the scale against your installed game before applying the result: this profile does not promise support for every Call of Duty release, ADS mode or special input curve.',
+      ],
+      [
+        'KovaaK’s and other reference profiles',
+        'The KovaaK’s sensitivity conversion applies specifically to its Quake/Source profile. Select that scale in the trainer before entering the result. Other listed presets include CS:GO, Team Fortress 2, Titanfall 2 and Quake. A shared game engine alone does not establish support for an unlisted game.',
+      ],
+    ],
+  },
+  {
     id: 'formula',
-    title: 'The math behind the result',
+    title: 'Mouse sensitivity calculator: DPI, eDPI and cm/360',
     parts: [
       [
         'Match physical turn distance',
@@ -76,18 +108,26 @@ const sections = [
   },
   {
     id: 'examples',
-    title: 'Worked examples',
+    title: 'Game-to-game sensitivity conversion examples',
     parts: [
       [
-        'CS2 → VALORANT',
+        'CS2 to VALORANT sensitivity conversion',
         'At 800 DPI on both sides, CS2 sensitivity 1 becomes 0.3142857143 in VALORANT: 1 × 0.022 ÷ 0.07. Both correspond to about 51.9545 cm/360. At target DPI 1600, the VALORANT value halves to 0.1571428571.',
       ],
       [
-        'VALORANT → CS2',
+        'VALORANT to CS2 sensitivity conversion',
         'At equal DPI, VALORANT 0.35 becomes CS2 1.1136363636, about 46.6531 cm/360 at 800 DPI. If the source instead uses 1600 DPI and the target uses 800, the CS2 result doubles to 2.2272727273.',
       ],
       [
-        '800 → 1600 DPI in the same game',
+        'Fortnite to Overwatch 2 and Apex Legends',
+        'At equal DPI, Fortnite 4% becomes Overwatch 2 sensitivity 3.3666666667 or Apex Legends sensitivity 1.01 with these reference coefficients. Enter 4 as the Fortnite source value. At 800 DPI, all three settings correspond to about 51.4401 cm/360.',
+      ],
+      [
+        'Overwatch 2 to Apex sensitivity conversion',
+        'At 800 DPI in both games, Overwatch 2 sensitivity 5 converts to Apex Legends sensitivity 1.5. The calculation is 5 × 0.0066 ÷ 0.022, giving about 34.6364 cm/360. Reverse the games to calculate Apex to Overwatch settings.',
+      ],
+      [
+        'DPI sensitivity conversion: 800 to 1600 DPI',
         'CS2 sensitivity 1.2 at 800 DPI becomes 0.6 at 1600 DPI. Both have 960 eDPI and about 43.2955 cm/360. Equal eDPI is useful within the same game scale; across different games, compare cm/360 instead.',
       ],
       [
@@ -98,15 +138,19 @@ const sections = [
   },
   {
     id: 'choose-your-match',
-    title: 'Rotation or screen-distance matching?',
+    title: 'Aim sensitivity matching: cm/360, FOV and ADS',
     parts: [
       [
         'Use rotation matching as your starting point',
         'Equal cm/360 preserves the hand movement for a full turn. FOV, zoom, recoil, movement and frame timing can still make aiming feel different. No conversion can guarantee identical aim across games.',
       ],
       [
-        'Use screen matching for a specific visual point',
+        'FOV and horizontal monitor-distance matching',
         'Advanced horizontal monitor matching uses actual horizontal FOV. Zero percent matches the limit near the crosshair; 100% matches the screen edge. This changes cm/360 when FOV differs and does not automatically calculate game-specific ADS multipliers. Use the FOV helper for vertical, diagonal or 4:3-based menu values.',
+      ],
+      [
+        'ADS sensitivity estimates from your measurements',
+        'The scoped-distance helper calculates a proportional ADS adjustment from your current multiplier, measured scoped cm/360 and desired distance. It requires your own measurements with the same DPI, hipfire setting and optic. It is not a universal cross-game ADS sensitivity converter and does not detect weapon-specific zoom behavior.',
       ],
     ],
   },
@@ -130,7 +174,7 @@ const sections = [
   },
   {
     id: 'save-share',
-    title: 'Save, share and compare',
+    title: 'Compare game settings, save profiles and practice your aim',
     parts: [
       [
         'Keep your settings',
@@ -174,6 +218,17 @@ export default function Article() {
         {sections.map((section) => (
           <section key={section.id} id={section.id}>
             <h2>{section.title}</h2>
+            {section.id === 'supported-games' && (
+              <p>
+                This free mouse sensitivity calculator includes {GAMES.length - 1} named reference
+                profiles plus a measured-yaw custom option. Available profiles:{' '}
+                {GAMES.filter((g) => g.id !== 'custom')
+                  .map((g) => g.name)
+                  .join(', ')}
+                . Select a listed profile in the converter; check its assumptions before using the
+                result.
+              </p>
+            )}
             {section.parts.map(([title, text]) => (
               <div key={title}>
                 <h3>{title}</h3>

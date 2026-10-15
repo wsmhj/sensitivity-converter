@@ -1,8 +1,25 @@
+import type { Metadata } from 'next';
 import { resolveSiteConfig } from './site-config';
 export const site = {
   name: 'Turnmatch',
-  title: 'Sensitivity Converter — CS2, Valorant, DPI & cm/360 | Turnmatch',
+  title: 'Mouse Sensitivity Converter: CS2 & VALORANT | Turnmatch',
   description:
-    'Convert mouse sensitivity between supported FPS games, change DPI, and match cm/360. Check the formula and try your setup in a free practice range.',
+    'Free mouse sensitivity converter for CS2, VALORANT, Fortnite, Apex Legends and more. Match cm/360, convert DPI, check eDPI and save your PC game settings.',
   ...resolveSiteConfig(process.env),
 };
+
+export function pageMetadata(title: string, description: string, path: string): Metadata {
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      title: `${title} | ${site.name}`,
+      description,
+      url: path,
+      type: 'website',
+      siteName: site.name,
+    },
+    twitter: { card: 'summary', title: `${title} | ${site.name}`, description },
+  };
+}

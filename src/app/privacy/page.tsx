@@ -1,5 +1,9 @@
-import type { Metadata } from 'next';
-export const metadata: Metadata = { title: 'Privacy', alternates: { canonical: '/privacy' } };
+import { pageMetadata } from '@/lib/site';
+export const metadata = pageMetadata(
+  'Privacy Policy',
+  'How Turnmatch handles browser-saved settings, profile backups, shared links, report exports and optional feedback messages.',
+  '/privacy',
+);
 export default function Privacy() {
   return (
     <article className="info-page">

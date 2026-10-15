@@ -1,5 +1,9 @@
-import type { Metadata } from 'next';
-export const metadata: Metadata = { title: 'About', alternates: { canonical: '/about' } };
+import { pageMetadata } from '@/lib/site';
+export const metadata = pageMetadata(
+  'About Our Mouse Sensitivity Calculator',
+  'Learn how Turnmatch converts PC mouse sensitivity using DPI, yaw and cm/360, with documented game profiles, formulas and clear limits.',
+  '/about',
+);
 export default function About() {
   return (
     <article className="info-page">

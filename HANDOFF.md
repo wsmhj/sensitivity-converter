@@ -1,3 +1,15 @@
+# 2026-10-15 最新：SEO文案与元数据
+
+根据用户提供的100条关键词核对现有功能：39条覆盖支持的搜索意图，6条需要限定条件，55条不适用。逐条决策见docs/seo-keyword-audit.json；这些数字不是搜索量或排名预测。未新增游戏预设，不将自定义yaw等同于原生支持，不宣传手柄/PS5/主机或通用ADS转换。
+
+首页title改为Mouse Sensitivity Converter: CS2 & VALORANT | Turnmatch；description覆盖实际支持的游戏、cm/360、DPI、eDPI与本地保存。正文新增游戏范围说明和Fortnite/Overwatch/Apex算例，保留公式和限制，FAQ与JSON-LD同源。17个命名预设清单从GAMES生成。About、Contact、Privacy、Terms使用独立title/description及OG/Twitter信息，未改法律页正文。
+
+验证：63项测试、lint、类型检查、格式通过。正式与本地构建的canonical/robots检查通过；5页元数据唯一，OG与Twitter描述一致，72个内部链接及13个资源通过。新增算例按项目系数复算，Fortnite4%在800DPI为51.4401cm/360。检查脚本新增元数据唯一性和分享描述一致性验证。本地预览3000端口，未部署。
+
+参考Google Search Central标题、摘要与关键词堆砌指南；没有添加meta keywords或为缺失功能建立入口页。
+
+---
+
 # 2026-10-15 最新调整：按功能建立视觉分区
 
 用户认为设计变化不明显、多个功能采用同一种配色。本轮增加四个功能导航入口；转换目标区使用浅蓝背景，比较表格使用青色表头及标识，保存区采用暖砂色面板及棕色保存按钮，练习入口独立为深色紫灰横幅。练习入口移出转换区，反馈条移至辅助功能区之后。高级设置和正文维持中性色，颜色同时配合标题和形态区分功能。

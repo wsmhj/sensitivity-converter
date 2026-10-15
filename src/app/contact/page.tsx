@@ -1,6 +1,10 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/site';
 
-export const metadata: Metadata = { title: 'Contact', alternates: { canonical: '/contact' } };
+export const metadata = pageMetadata(
+  'Contact & Conversion Feedback',
+  'Report a mouse sensitivity conversion issue or suggest an improvement through the Turnmatch feedback form. No account or email address is required.',
+  '/contact',
+);
 
 export default function Contact() {
   return (

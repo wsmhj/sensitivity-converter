@@ -1,5 +1,9 @@
-import type { Metadata } from 'next';
-export const metadata: Metadata = { title: 'Terms', alternates: { canonical: '/terms' } };
+import { pageMetadata } from '@/lib/site';
+export const metadata = pageMetadata(
+  'Terms of Use',
+  'Read the terms for using Turnmatch, including sensitivity reference limits, saved settings and verification of results in your game.',
+  '/terms',
+);
 export default function Terms() {
   return (
     <article className="info-page">

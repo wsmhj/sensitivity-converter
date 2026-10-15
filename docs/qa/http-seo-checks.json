@@ -1,35 +1,40 @@
 {
-  "checkedAt": "2026-10-15T11:32:38.837Z",
+  "checkedAt": "2026-10-15T11:38:23.150Z",
   "origin": "http://127.0.0.1:3000",
   "pages": [
     {
       "path": "/",
       "status": 200,
-      "title": "Sensitivity Converter — CS2, Valorant, DPI &amp; cm/360 | Turnmatch",
+      "title": "Mouse Sensitivity Converter: CS2 &amp; VALORANT | Turnmatch",
+      "description": "Free mouse sensitivity converter for CS2, VALORANT, Fortnite, Apex Legends and more. Match cm/360, convert DPI, check eDPI and save your PC game settings.",
       "h1": 1
     },
     {
       "path": "/about",
       "status": 200,
-      "title": "About | Turnmatch",
+      "title": "About Our Mouse Sensitivity Calculator | Turnmatch",
+      "description": "Learn how Turnmatch converts PC mouse sensitivity using DPI, yaw and cm/360, with documented game profiles, formulas and clear limits.",
       "h1": 1
     },
     {
       "path": "/contact",
       "status": 200,
-      "title": "Contact | Turnmatch",
+      "title": "Contact &amp; Conversion Feedback | Turnmatch",
+      "description": "Report a mouse sensitivity conversion issue or suggest an improvement through the Turnmatch feedback form. No account or email address is required.",
       "h1": 1
     },
     {
       "path": "/privacy",
       "status": 200,
-      "title": "Privacy | Turnmatch",
+      "title": "Privacy Policy | Turnmatch",
+      "description": "How Turnmatch handles browser-saved settings, profile backups, shared links, report exports and optional feedback messages.",
       "h1": 1
     },
     {
       "path": "/terms",
       "status": 200,
-      "title": "Terms | Turnmatch",
+      "title": "Terms of Use | Turnmatch",
+      "description": "Read the terms for using Turnmatch, including sensitivity reference limits, saved settings and verification of results in your game.",
       "h1": 1
     },
     {
@@ -48,7 +53,7 @@
       "contentType": "image/png"
     }
   ],
-  "internalLinks": 71,
+  "internalLinks": 72,
   "assets": 13,
   "schema": "WebApplication + 11 FAQ entries",
   "missingRoute": 404

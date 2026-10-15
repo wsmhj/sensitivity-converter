@@ -2,7 +2,16 @@ import type { Metadata } from 'next';
 import Converter from '@/components/converter';
 import Article, { faqs } from '@/components/article';
 import { site } from '@/lib/site';
-export const metadata: Metadata = { alternates: { canonical: '/' }, openGraph: { url: '/' } };
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+  openGraph: {
+    url: '/',
+    title: site.title,
+    description: site.description,
+    type: 'website',
+    siteName: site.name,
+  },
+};
 export default function Home() {
   const schema = [
     {
@@ -34,8 +43,11 @@ export default function Home() {
       />
       <section className="hero">
         <div className="hero-copy">
-          <h1>Sensitivity Converter</h1>
-          <p>Choose your games. Bring your settings across.</p>
+          <h1>Mouse Sensitivity Converter</h1>
+          <p>
+            Convert your PC mouse settings between games, match cm/360 and adjust for a new DPI.
+            Free to use, with no account required.
+          </p>
         </div>
         <p className="hero-signature">
           Different game.

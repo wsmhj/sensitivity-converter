@@ -9,6 +9,8 @@ const canonicalOrigin = new URL(
 const paths = ['/', '/about', '/contact', '/privacy', '/terms'];
 const pages = new Map(),
   checks = [];
+const titles = new Set(),
+  descriptions = new Set();
 for (const path of paths) {
   const response = await fetch(origin + path);
   assert.equal(response.status, 200);
@@ -16,13 +18,24 @@ for (const path of paths) {
   pages.set(path, html);
   assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1);
   assert.ok(html.includes('name="description"'));
+  const title = html.match(/<title>(.*?)<\/title>/)?.[1];
+  const description = html.match(/<meta name="description" content="([^"]+)"/)?.[1];
+  assert.ok(title && description, `Missing metadata on ${path}`);
+  assert.ok(!titles.has(title), `Duplicate title on ${path}`);
+  assert.ok(!descriptions.has(description), `Duplicate description on ${path}`);
+  titles.add(title);
+  descriptions.add(description);
+  assert.equal(html.match(/<meta property="og:title" content="([^"]+)"/)?.[1], title);
+  assert.equal(html.match(/<meta property="og:description" content="([^"]+)"/)?.[1], description);
+  assert.equal(html.match(/<meta name="twitter:description" content="([^"]+)"/)?.[1], description);
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
   assert.ok(canonical, `Missing canonical on ${path}`);
   assert.equal(new URL(canonical).href, new URL(path, canonicalOrigin).href);
   checks.push({
     path,
     status: response.status,
-    title: html.match(/<title>(.*?)<\/title>/)?.[1],
+    title,
+    description,
     h1: 1,
   });
 }

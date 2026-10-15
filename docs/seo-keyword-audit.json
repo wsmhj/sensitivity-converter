@@ -1,0 +1,619 @@
+{
+  "date": "2026-10-15",
+  "source": "User-provided keyword list",
+  "searchVolumeAvailable": false,
+  "rankingOrTrafficGuarantee": false,
+  "scope": "Existing PC mouse features only; no new game presets or landing pages added. Covered means intent coverage, not exact-string insertion.",
+  "counts": {
+    "covered": 39,
+    "qualified": 6,
+    "exclude": 55
+  },
+  "keywords": [
+    {
+      "keyword": "sensitivity converter",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "mouse sensitivity converter",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "game sensitivity converter",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "valorant sensitivity converter",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "wardogs sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "aim sensitivity converter",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "fps sensitivity converter",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "controller sensitivity converter",
+      "decision": "exclude",
+      "reason": "Only PC mouse input is supported; no controller or console conversion.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter valorant to cs2",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "converter sensitivity",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "fortnite sensitivity converter",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "rainbow 6 siege sensitivity converter",
+      "decision": "qualified",
+      "reason": "Reference PC hipfire scale with default multiplier/version assumptions, not automatic ADS.",
+      "placement": "#supported-games"
+    },
+    {
+      "keyword": "deadlock sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter game",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "sensitivity converter valorant",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "apex sensitivity converter",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "dpi sensitivity converter",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "sensitivity converter combat master",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter cs2",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "sensitivity converter forntite to overwatch",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "sensitivity converter ads",
+      "decision": "qualified",
+      "reason": "Measurement-based proportional ADS helper only; no universal game/optic conversion.",
+      "placement": "#choose-your-match and FAQ"
+    },
+    {
+      "keyword": "cs2 to wardogs sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "free mouse sensitivity converter calculator",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "how to fish sensitivity converter",
+      "decision": "exclude",
+      "reason": "Unclear or unrelated search intent; not used in copy.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter point blank",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "minecraft sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "valorant to cs2 sensitivity converter",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "cs2 sensitivity converter",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "sensitivity converter cs2 to valorant",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "apex legends controller sensitivity converter",
+      "decision": "exclude",
+      "reason": "Only PC mouse input is supported; no controller or console conversion.",
+      "placement": null
+    },
+    {
+      "keyword": "mouse converter sensitivity",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "red dead redemption 2 sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter red dead redemption 2",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter toolscreen",
+      "decision": "exclude",
+      "reason": "Unclear or unrelated search intent; not used in copy.",
+      "placement": null
+    },
+    {
+      "keyword": "marvel rivals sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "ps5 controller sensitivity converter",
+      "decision": "exclude",
+      "reason": "Only PC mouse input is supported; no controller or console conversion.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter roblox",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity mouse converter valorant",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "overwatch to deadlock sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "console sensitivity converter",
+      "decision": "exclude",
+      "reason": "Only PC mouse input is supported; no controller or console conversion.",
+      "placement": null
+    },
+    {
+      "keyword": "cs2 sensitivity to valorant sens converter",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "pubg sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter fortnite to apex",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "far far west sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "resident evil 4 sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter h1z1",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "cs2 sensitivity converter resolution",
+      "decision": "qualified",
+      "reason": "Resolution/aspect ratio is used by the FOV helper; no automatic resolution-based CS2 sensitivity guarantee.",
+      "placement": "#choose-your-match"
+    },
+    {
+      "keyword": "overwatch to finals sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "cod warzone sensitivity converter",
+      "decision": "qualified",
+      "reason": "Reference PC hipfire scale with default multiplier/version assumptions, not automatic ADS.",
+      "placement": "#supported-games"
+    },
+    {
+      "keyword": "hunt sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "ready or not sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter to bf1",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "converter sensitivity multi theft auto cs2",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "deadlock mouse sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "h1z1 sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter diff game",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "cod2 sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter deadlock",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "ultrakill sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "wardogs aim sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "converter mouse sensitivity",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "hunt showdown sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "tarkov sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "valorant to deadlock sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "mouse sensitivity converter kovaaks",
+      "decision": "qualified",
+      "reason": "KovaaK’s Quake/Source profile only.",
+      "placement": "#supported-games"
+    },
+    {
+      "keyword": "overwatch sensitivity converter",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "sensitivity converter dpi",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "mouse sensitivity calculator and converter",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "roblox mouse sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter bo3 pc",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "ussensitivity converter",
+      "decision": "exclude",
+      "reason": "Unclear or unrelated search intent; not used in copy.",
+      "placement": null
+    },
+    {
+      "keyword": "3d aim trainer sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "mouse dpi sensitivity converter",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "sensitivity converter overwatch to apex",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "sensitivity converter to dune awkening",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "fps game edpi & mouse sensitivity converter",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "pubg pc mouse sensitivity converter 800 dpi",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "bodycam sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "fps game sensitivity converter",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "game mouse sensitivity converter",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "mouse sensitivity converter calculator",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "aimlabs com mouse sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "console sensitivity converter ps5",
+      "decision": "exclude",
+      "reason": "Only PC mouse input is supported; no controller or console conversion.",
+      "placement": null
+    },
+    {
+      "keyword": "pc sensitivity converter",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "sensitivity converter matcher",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "sensitivity game converter",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "overwatch 2 sensitivity converter to apex",
+      "decision": "covered",
+      "reason": "Existing presets and supported conversion direction. Variants use natural spelling; forntite is corrected to Fortnite.",
+      "placement": "#supported-games and #examples"
+    },
+    {
+      "keyword": "aimlabs sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "hallloween the game sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter controller",
+      "decision": "exclude",
+      "reason": "Only PC mouse input is supported; no controller or console conversion.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity mouse converter",
+      "decision": "covered",
+      "reason": "Relevant mouse/FPS/DPI calculator intent, expressed naturally rather than repeating every word-order variant.",
+      "placement": "Homepage metadata, H1, introduction, #how-it-works and #formula"
+    },
+    {
+      "keyword": "ads sensitivity converter",
+      "decision": "qualified",
+      "reason": "Measurement-based proportional ADS helper only; no universal game/optic conversion.",
+      "placement": "#choose-your-match and FAQ"
+    },
+    {
+      "keyword": "apex legends to battlefield 6 ads sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "apex legends to battlefield 6 sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "cyberpunk sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "hell let loose sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "sensitivity converter valorant to wardogs",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "valorant to war dogs sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "warframe sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    },
+    {
+      "keyword": "roblox rivals sensitivity converter",
+      "decision": "exclude",
+      "reason": "Named game, version or trainer has no verified preset in GAMES. A custom yaw option is not advertised as native support.",
+      "placement": null
+    }
+  ],
+  "guidance": [
+    "https://developers.google.com/search/docs/appearance/title-link",
+    "https://developers.google.com/search/docs/appearance/snippet",
+    "https://developers.google.com/search/docs/essentials/spam-policies#keyword-stuffing"
+  ]
+}
