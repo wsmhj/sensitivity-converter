@@ -1,3 +1,14 @@
+# Current concept — game transfer desk (2026-10-15)
+
+User rejected both the decorative firing-range design and the generic minimal form. Approved trying a new two-column editorial comparison desk: warm paper #f5f3ee/#fdfcf9, ink #232323, cobalt #3454d1; no neon, precision-ruler motif, target illustration or decorative animation.
+
+The identity comes from the paired From/To composition, large clickable game names, large source value and cobalt target result, a narrow center rule, and a new two-way-arrow brand mark. The short serif signature “Different game. Familiar movement.” complements the sans-serif interface. Target result now lives within the target column; DPI remains editable below it. Essential metrics sit directly beneath the paired sheet. Mobile stacks source → swap → target without changing DOM focus order. Dark mode uses neutral charcoal and pale cobalt. Existing conversion, exports, practice and analytics behavior is retained.
+
+63 tests, lint and TypeScript checks pass. Browser connection remains unavailable; screenshots and actual responsive interaction verification are still pending. Do not present historical screenshots as evidence for this concept. Local preview is provided for the user's design review.
+
+---
+## Superseded concepts
+
 # Current visual direction — quiet utility (2026-10-15)
 
 User-approved redesign: remove decorative firing-range art, promo game strip, HUD corners, acid-lime result backgrounds and condensed uppercase display typography. Lead with a short title and the working converter.

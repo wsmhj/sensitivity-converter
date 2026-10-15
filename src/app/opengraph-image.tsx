@@ -10,13 +10,13 @@ export default function Image() {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        background: '#f7f8fa',
+        background: '#f5f3ee',
         padding: '64px',
         fontFamily: 'sans-serif',
-        color: '#202724',
+        color: '#232323',
       }}
     >
-      <div style={{ display: 'flex', fontSize: 30, fontWeight: 700, color: '#306b53' }}>
+      <div style={{ display: 'flex', fontSize: 30, fontWeight: 700, color: '#3454d1' }}>
         turnmatch.
       </div>
       <div
@@ -24,15 +24,15 @@ export default function Image() {
       >
         Sensitivity Converter
       </div>
-      <div style={{ display: 'flex', fontSize: 25, color: '#606b65', marginTop: 20 }}>
-        Match your turn distance across games.
+      <div style={{ display: 'flex', fontSize: 25, color: '#696862', marginTop: 20 }}>
+        Different game. Familiar movement.
       </div>
       <div
         style={{
           display: 'flex',
           marginTop: 48,
-          background: '#eef5f1',
-          color: '#306b53',
+          background: '#edf0fc',
+          color: '#3454d1',
           padding: '26px 32px',
           borderRadius: 4,
           alignItems: 'center',

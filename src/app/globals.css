@@ -1,14 +1,14 @@
 :root {
-  --bg: #f7f8fa;
-  --paper: #fff;
-  --ink: #202724;
-  --muted: #606b65;
-  --line: #dde3df;
-  --accent: #306b53;
+  --bg: #f5f3ee;
+  --paper: #fdfcf9;
+  --ink: #232323;
+  --muted: #696862;
+  --line: #d8d5cd;
+  --accent: #3454d1;
   --on-accent: #ffffff;
-  --soft: #eef5f1;
+  --soft: #edf0fc;
   --result: var(--soft);
-  --result-line: #ccdfd3;
+  --result-line: #ccd3ed;
   --sans: Arial, Helvetica, sans-serif;
   --mono: 'Cascadia Code', Consolas, monospace;
   color-scheme: light;
@@ -30,15 +30,15 @@ body {
     sans-serif;
 }
 html[data-theme='dark'] {
-  --bg: #151918;
-  --paper: #1d2320;
-  --ink: #eef2ed;
-  --muted: #b0b9b3;
-  --line: #39433d;
-  --soft: #24372c;
-  --accent: #9bc5ac;
-  --on-accent: #17251c;
-  --result-line: #3e5949;
+  --bg: #191a1e;
+  --paper: #222328;
+  --ink: #f0eee8;
+  --muted: #b5b4b1;
+  --line: #414249;
+  --soft: #292f46;
+  --accent: #a4b5ff;
+  --on-accent: #1d2440;
+  --result-line: #485477;
   color-scheme: dark;
 }
 a {

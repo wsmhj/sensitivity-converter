@@ -4,9 +4,7 @@ import { useEffect, useState } from 'react';
 export function Mark() {
   return (
     <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <path d="M23.8 6.7A12 12 0 1 0 27.8 18" stroke="currentColor" strokeWidth="2.4" />
-      <path d="M23 2.5v6h6M16 8v16M8 16h16" stroke="currentColor" strokeWidth="2.4" />
-      <circle cx="16" cy="16" r="3" fill="currentColor" />
+      <path d="M4 10h23m-6-6 6 6-6 6M28 22H5m6-6-6 6 6 6" stroke="currentColor" strokeWidth="2.4" />
     </svg>
   );
 }

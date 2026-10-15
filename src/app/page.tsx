@@ -35,10 +35,13 @@ export default function Home() {
       <section className="hero">
         <div className="hero-copy">
           <h1>Sensitivity Converter</h1>
-          <p>
-            Match your turn distance across games. Enter your sensitivity and DPI to get started.
-          </p>
+          <p>Choose your games. Bring your settings across.</p>
         </div>
+        <p className="hero-signature">
+          Different game.
+          <br />
+          <em>Familiar movement.</em>
+        </p>
       </section>
       <Converter />
       <Article />

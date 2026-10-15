@@ -43,7 +43,7 @@ export default function GamePicker({
         if (!e.currentTarget.contains(e.relatedTarget)) setOpen(false);
       }}
     >
-      <span className="field-label">{side} game</span>
+      <span className="sr-only">{side} game</span>
       <button
         data-analytics-id={`${side.toLowerCase()}_game_picker`}
         ref={trigger}
@@ -57,9 +57,10 @@ export default function GamePicker({
         }}
         aria-label={`Choose ${side.toLowerCase()} game: ${game(value)?.name}`}
       >
-        <span className={`game-badge badge-${value}`}>{game(value)?.short.slice(0, 3)}</span>
-        <span>{game(value)?.name}</span>
-        <span aria-hidden="true">⌄</span>
+        <span className="game-name">{game(value)?.name}</span>
+        <span className="game-change" aria-hidden="true">
+          ↗
+        </span>
       </button>
       {open && (
         <div className="game-menu" id={`${side}-games`}>

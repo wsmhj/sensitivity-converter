@@ -1,4 +1,4 @@
-/* Quiet utility interface. Structural layouts live in globals.css. */
+/* Turnmatch transfer desk: an editorial, two-column comparison sheet. */
 body {
   font-family: var(--sans);
 }
@@ -16,9 +16,9 @@ body {
   gap: 24px;
 }
 .brand {
-  font-size: 23px;
-  font-weight: 700;
-  letter-spacing: -0.7px;
+  font-size: 26px;
+  font-weight: 750;
+  letter-spacing: -1.2px;
 }
 .brand svg {
   width: 27px;
@@ -37,12 +37,15 @@ body {
   flex-shrink: 0;
 }
 .hero {
-  padding: 36px 0 28px;
-  display: block;
+  padding: 40px 0 32px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
 }
 .hero h1 {
-  font: 650 36px/1.2 var(--sans);
-  letter-spacing: -1px;
+  font: 600 clamp(28px, 3.5vw, 40px)/1.15 var(--sans);
+  letter-spacing: -1.5px;
   margin-bottom: 12px;
 }
 .hero p {
@@ -51,8 +54,10 @@ body {
   line-height: 1.6;
 }
 .converter {
-  padding: 28px;
-  border-radius: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   box-shadow: none;
 }
 button {
@@ -74,21 +79,30 @@ textarea:focus {
   border-color: var(--accent);
 }
 .tool-toolbar {
-  margin-bottom: 24px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--line);
+  margin-bottom: 16px;
+  padding-bottom: 0;
+  border: 0;
   gap: 12px;
 }
 .segmented {
-  border-radius: 8px;
+  padding: 0;
+  gap: 20px;
+  border-radius: 0;
+  background: transparent;
 }
 .segmented button {
-  min-height: 40px;
+  min-height: 44px;
   font-size: 13px;
-  padding: 8px 14px;
+  padding: 8px 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  color: var(--muted);
 }
 .segmented button[aria-pressed='true'] {
   color: var(--accent);
+  border-color: var(--accent);
+  background: transparent;
   box-shadow: none;
   font-weight: 600;
 }
@@ -97,27 +111,38 @@ textarea:focus {
   letter-spacing: 0;
 }
 .step-caption {
-  font-size: 15px;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 400;
   letter-spacing: 0;
-  color: var(--ink);
-  margin-bottom: 18px;
+  color: var(--muted);
+  margin-bottom: 20px;
 }
 .example-tag {
-  font: 12px var(--sans);
+  font: 11px var(--sans);
   letter-spacing: 0;
-  padding: 3px 8px;
-  background: var(--bg);
+  margin-left: auto;
   color: var(--muted);
-  border-radius: 4px;
 }
 .field-label {
   font-size: 13px;
   color: var(--muted);
 }
 .game-trigger {
-  height: 52px;
-  font-size: 14px;
+  height: auto;
+  min-height: 80px;
+  padding: 0 0 20px;
+  align-items: flex-start;
+  font-size: clamp(24px, 2.7vw, 32px);
+  line-height: 1.12;
+  letter-spacing: -1.2px;
+  font-weight: 600;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
 }
 .game-badge {
   font: 600 11px var(--sans);
@@ -146,16 +171,28 @@ textarea:focus {
   font-size: 13px;
 }
 .swap {
-  border-radius: 6px;
+  grid-column: auto;
+  grid-row: auto;
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 36px;
+  min-height: 36px;
+  z-index: 2;
+  border-radius: 50%;
   background: var(--paper);
   color: var(--muted);
+  font-size: 20px;
 }
 .result-panel {
-  background: var(--soft);
+  margin-top: 24px;
+  background: transparent;
   color: var(--ink);
-  border: 1px solid var(--result-line);
-  border-radius: 8px;
-  padding: 20px;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
 }
 .result-heading {
   font-size: 13px;
@@ -166,20 +203,23 @@ textarea:focus {
   color: var(--muted);
 }
 .result-number output {
-  font: 600 38px/1.25 var(--mono);
+  font: 500 clamp(40px, 4.6vw, 64px)/1.15 var(--sans);
+  font-variant-numeric: tabular-nums;
   color: var(--accent);
-  letter-spacing: -1.5px;
+  letter-spacing: -2.5px;
 }
 .result-copy {
-  background: var(--paper);
-  border-color: var(--result-line);
-  color: var(--accent);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
   font-size: 13px;
-  padding: 9px 12px;
+  padding: 10px 14px;
+  border-radius: 4px;
 }
 .result-copy:hover:not(:disabled) {
-  background: var(--paper);
-  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--on-accent);
+  filter: brightness(0.95);
 }
 .result-bottom {
   color: var(--muted);
@@ -197,13 +237,16 @@ textarea:focus {
   border-color: var(--line);
 }
 .metric-grid {
-  gap: 16px;
-  margin: 24px 0;
+  gap: 0;
+  margin: 0 0 24px;
+  border-bottom: 1px solid var(--line);
 }
 .metric {
   background: transparent;
-  padding: 14px 16px;
-  border-radius: 6px;
+  padding: 18px 20px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-radius: 0;
 }
 .metric > span,
 .metric small {
@@ -284,8 +327,11 @@ html[data-theme='dark'] .action-primary {
 }
 .comparison,
 .saved {
-  padding: 24px;
-  border-radius: 8px;
+  padding: 24px 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--ink);
+  border-radius: 0;
 }
 .utility-grid h2,
 .contents h2 {
@@ -453,7 +499,7 @@ td {
     font-size: 14px;
   }
   .converter {
-    padding: 22px;
+    padding: 0;
   }
   .result-number output {
     font-size: 36px;
@@ -484,7 +530,7 @@ td {
     font-size: 28px;
   }
   .converter {
-    padding: 16px;
+    padding: 0;
   }
   .tool-toolbar {
     flex-wrap: wrap;
@@ -495,7 +541,7 @@ td {
     flex: 1 1 auto;
   }
   .segmented button {
-    padding: 8px;
+    padding: 8px 0;
     font-size: 12px;
     flex: 1;
   }
@@ -506,7 +552,7 @@ td {
     font-size: 18px;
   }
   .result-panel {
-    padding: 16px;
+    padding: 0;
   }
   .result-number {
     flex-wrap: wrap;
@@ -522,7 +568,7 @@ td {
   }
   .comparison,
   .saved {
-    padding: 18px;
+    padding: 18px 0;
   }
   .contents nav {
     grid-template-columns: 1fr;
@@ -549,5 +595,186 @@ td {
   .converter {
     padding: 0;
     border: 0;
+  }
+}
+
+.hero .hero-signature {
+  flex-shrink: 0;
+  font:
+    24px/1.25 Georgia,
+    'Times New Roman',
+    serif;
+  letter-spacing: -0.6px;
+  color: var(--ink);
+  margin: 0 0 2px;
+}
+.hero-signature em {
+  color: var(--accent);
+}
+.conversion-grid {
+  position: relative;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--ink);
+  background: var(--paper);
+}
+.source-column,
+.target-column {
+  grid-column: auto;
+  grid-row: auto;
+  padding: 28px 32px;
+  min-width: 0;
+}
+.target-column {
+  border-left: 1px solid var(--line);
+}
+.step-caption > span {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1.6px;
+  color: var(--ink);
+  font-weight: 700;
+  margin: 0;
+}
+.game-name {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.game-change {
+  font: 22px var(--sans);
+  color: var(--muted);
+  margin-left: 8px;
+}
+.game-trigger:hover:not(:disabled) {
+  background: transparent;
+  color: var(--accent);
+}
+.source-column .two-fields {
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+.source-column .two-fields > label:first-child input {
+  font: 500 clamp(40px, 4.6vw, 64px)/1.15 var(--sans);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -2.5px;
+  padding: 4px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+}
+.source-column .two-fields > label:last-child,
+.target-dpi .numeric-field {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 8px 16px;
+  align-items: center;
+}
+.source-column .two-fields > label:last-child .field-label,
+.target-dpi .field-label {
+  margin: 0;
+}
+.target-dpi {
+  margin-top: 24px;
+}
+.target-dpi small,
+.target-dpi .field-error,
+.source-column .two-fields > label:last-child .field-error {
+  grid-column: 1 / -1;
+}
+.target-dpi input,
+.source-column .two-fields > label:last-child input {
+  font-size: 16px;
+  padding: 8px 12px;
+  background: transparent;
+}
+.result-number {
+  margin: 10px 0 18px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+.result-bottom {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.metric:last-child {
+  border-right: 0;
+}
+.utility-grid {
+  gap: 48px;
+}
+@media (max-width: 760px) {
+  .hero {
+    align-items: flex-start;
+  }
+  .hero .hero-signature {
+    font-size: 18px;
+  }
+  .conversion-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .source-column,
+  .target-column {
+    padding: 24px;
+    margin: 0;
+  }
+  .target-column {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .swap {
+    position: static;
+    grid-column: 1;
+    justify-self: center;
+    transform: rotate(90deg);
+    margin: -18px 0;
+  }
+  .game-trigger {
+    min-height: 0;
+    font-size: 28px;
+  }
+  .source-column .two-fields > label:first-child input {
+    font-size: 48px;
+  }
+  .result-number output {
+    font-size: 48px;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    display: block;
+  }
+  .hero .hero-signature {
+    margin-top: 16px;
+    font-size: 18px;
+  }
+  .hero-signature br {
+    display: none;
+  }
+  .hero-signature em {
+    margin-left: 5px;
+  }
+  .source-column,
+  .target-column {
+    padding: 24px 20px;
+  }
+  .segmented {
+    gap: 16px;
+  }
+  .metric {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding-inline: 0;
+  }
+  .metric:last-child {
+    border-bottom: 0;
+  }
+  .utility-grid {
+    gap: 24px;
   }
 }

@@ -471,7 +471,7 @@ export default function Converter({
         <div className="conversion-grid">
           <div className="source-column">
             <div className="step-caption">
-              Your current setup
+              <span>From</span> Current setup
               {s.from === 'cs2' &&
                 s.to === 'valorant' &&
                 s.input === '1' &&
@@ -505,7 +505,9 @@ export default function Converter({
             ⇄
           </button>
           <div className="target-column">
-            <div className="step-caption">Your next game</div>
+            <div className="step-caption">
+              <span>To</span> New setup
+            </div>
             <GamePicker
               side="Target"
               value={s.to}
@@ -513,58 +515,74 @@ export default function Converter({
               favorites={favorites}
               onFavorite={favorite}
             />
+            <div
+              id="conversion-result"
+              tabIndex={-1}
+              className={`result-panel ${!r ? 'invalid' : ''}`}
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <div className="result-heading">
+                <span>Your sensitivity</span>
+                <span className="result-indicator">{r ? 'Live result' : 'Check inputs'}</span>
+              </div>
+              <div className="result-number">
+                <output data-testid="main-result">{r ? fmt(r.targetSens) : '—'}</output>
+                {copyButton(
+                  'result',
+                  r ? fmt(r.targetSens) : '',
+                  'Copy target sensitivity',
+                  'result-copy',
+                )}
+              </div>
+              <div className="result-bottom">
+                <span>
+                  {r
+                    ? s.match === 'rotation'
+                      ? 'Same physical turn distance'
+                      : 'Horizontal screen-distance match'
+                    : 'Fix the highlighted fields to calculate.'}
+                </span>
+                <label>
+                  Decimals{' '}
+                  <select
+                    aria-label="Result decimal places"
+                    value={s.precision}
+                    onChange={(e) => update({ precision: Number(e.target.value) })}
+                  >
+                    <option value={3}>3</option>
+                    <option value={5}>5</option>
+                    <option value={8}>8</option>
+                  </select>
+                </label>
+              </div>
+            </div>
             <div className="target-dpi">
               {field(
                 'dpiTo',
                 'Target DPI',
                 s.dpiTo,
                 (value) => update({ dpiTo: value }),
-                'Keep this the same if your mouse DPI is unchanged.',
+                'Use the same DPI unless you are changing your mouse settings.',
               )}
             </div>
           </div>
-          <div
-            id="conversion-result"
-            tabIndex={-1}
-            className={`result-panel ${!r ? 'invalid' : ''}`}
-            aria-live="polite"
-            aria-atomic="true"
-          >
-            <div className="result-heading">
-              <span>{to.name} sensitivity</span>
-              <span className="result-indicator">{r ? 'Live result' : 'Check inputs'}</span>
+        </div>
+        <div className="metric-grid">
+          {[
+            { name: 'Target cm / 360°', value: r ? r.targetCm : 0, key: 'cm', unit: 'cm' },
+            { name: 'Target in / 360°', value: r ? r.targetCm / 2.54 : 0, key: 'in', unit: 'in' },
+            { name: 'Target eDPI', value: r ? r.targetEdpi : 0, key: 'edpi', unit: 'DPI × sens' },
+          ].map((m) => (
+            <div className="metric" key={m.key}>
+              <span>{m.name}</span>
+              <div>
+                <strong>{r ? fmt(m.value, 3) : '—'}</strong>
+                <small>{m.unit}</small>
+                {copyButton(m.key, r ? fmt(m.value, 3) : '', `Copy ${m.name}`)}
+              </div>
             </div>
-            <div className="result-number">
-              <output data-testid="main-result">{r ? fmt(r.targetSens) : '—'}</output>
-              {copyButton(
-                'result',
-                r ? fmt(r.targetSens) : '',
-                'Copy target sensitivity',
-                'result-copy',
-              )}
-            </div>
-            <div className="result-bottom">
-              <span>
-                {r
-                  ? s.match === 'rotation'
-                    ? 'Same physical turn distance'
-                    : 'Horizontal screen-distance match'
-                  : 'Fix the highlighted fields to calculate.'}
-              </span>
-              <label>
-                Decimals{' '}
-                <select
-                  aria-label="Result decimal places"
-                  value={s.precision}
-                  onChange={(e) => update({ precision: Number(e.target.value) })}
-                >
-                  <option value={3}>3</option>
-                  <option value={5}>5</option>
-                  <option value={8}>8</option>
-                </select>
-              </label>
-            </div>
-          </div>
+          ))}
         </div>
         <p className="target-setting-note">
           <strong>Apply to {to.short} hipfire.</strong> {to.note} See the instructions below for the
@@ -587,22 +605,6 @@ export default function Converter({
             <strong>Let’s fix your setup.</strong> {Object.values(errors).join(' ')}
           </div>
         )}
-        <div className="metric-grid">
-          {[
-            { name: 'Target cm / 360°', value: r ? r.targetCm : 0, key: 'cm', unit: 'cm' },
-            { name: 'Target in / 360°', value: r ? r.targetCm / 2.54 : 0, key: 'in', unit: 'in' },
-            { name: 'Target eDPI', value: r ? r.targetEdpi : 0, key: 'edpi', unit: 'DPI × sens' },
-          ].map((m) => (
-            <div className="metric" key={m.key}>
-              <span>{m.name}</span>
-              <div>
-                <strong>{r ? fmt(m.value, 3) : '—'}</strong>
-                <small>{m.unit}</small>
-                {copyButton(m.key, r ? fmt(m.value, 3) : '', `Copy ${m.name}`)}
-              </div>
-            </div>
-          ))}
-        </div>
         <div className="distance-control">
           <div>
             <div>
