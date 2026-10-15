@@ -65,8 +65,8 @@ export default function Home() {
         <div className="hero-copy">
           <h1>Sensitivity Converter</h1>
           <p>
-            Convert your PC mouse settings between games, match cm/360 and adjust for a new DPI.
-            Free to use, with no account required.
+            A free game sensitivity converter for CS2, VALORANT, Fortnite, Apex Legends and
+            Overwatch 2. Convert your mouse aim sensitivity, match cm/360 and adjust for a new DPI.
           </p>
         </div>
         <p className="hero-signature">
