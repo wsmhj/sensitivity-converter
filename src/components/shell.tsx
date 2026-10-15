@@ -11,10 +11,10 @@ export function Mark() {
   );
 }
 export default function Shell() {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
   useEffect(() => {
     try {
-      const value = localStorage.getItem('turnmatch-theme') !== 'light';
+      const value = localStorage.getItem('turnmatch-theme') === 'dark';
       setDark(value);
       document.documentElement.dataset.theme = value ? 'dark' : 'light';
     } catch {

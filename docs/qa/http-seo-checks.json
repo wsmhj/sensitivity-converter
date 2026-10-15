@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-15T11:02:04.851Z",
+  "checkedAt": "2026-10-15T11:16:31.669Z",
   "origin": "http://127.0.0.1:3000",
   "pages": [
     {
@@ -48,7 +48,7 @@
       "contentType": "image/png"
     }
   ],
-  "internalLinks": 68,
+  "internalLinks": 67,
   "assets": 13,
   "schema": "WebApplication + 11 FAQ entries",
   "missingRoute": 404

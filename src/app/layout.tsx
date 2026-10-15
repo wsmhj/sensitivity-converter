@@ -4,7 +4,7 @@ import AnalyticsTracker from '@/components/analytics-tracker';
 import Shell, { Footer } from '@/components/shell';
 import { site } from '@/lib/site';
 import './globals.css';
-import './gaming.css';
+import './interface.css';
 import './practice.css';
 export const metadata: Metadata = {
   metadataBase: new URL(site.origin),
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="dark">
+    <html lang="en" data-theme="light">
       <body>
         <a className="skip-link" href="#main">
           Skip to content

@@ -6,17 +6,18 @@
   gap: 20px;
   padding: 20px;
   margin-top: 24px;
-  border: 1px solid #7b9d3a;
-  background: linear-gradient(110deg, #24341e, #111e20);
-  color: #f0f6e9;
-  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  border-radius: 8px;
 }
 .practice-launch strong {
-  font-size: 20px;
+  font-size: 16px;
 }
 .practice-launch p {
   margin: 6px 0 0;
   font-size: 14px;
+  color: var(--muted);
 }
 .practice-launch button {
   flex-shrink: 0;
@@ -25,12 +26,12 @@
   width: min(1120px, calc(100vw - 32px));
   max-height: calc(100dvh - 32px);
   padding: 24px;
-  border: 1px solid #60794a;
-  border-radius: 16px;
-  background: #10191e;
-  color: #edf3ed;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--ink);
   overflow: auto;
-  box-shadow: 0 30px 100px #0009;
+  box-shadow: 0 16px 48px #0004;
 }
 .aim-dialog::backdrop {
   background: #02070de6;
@@ -50,31 +51,31 @@
   min-height: 44px;
 }
 .aim-dialog button {
-  border: 1px solid #526053;
+  border: 1px solid var(--line);
   border-radius: 8px;
-  background: #25352b;
-  color: #f5faef;
+  background: var(--soft);
+  color: var(--ink);
   padding: 12px 18px;
   cursor: pointer;
   font: inherit;
   font-weight: 700;
 }
 .aim-dialog button:hover {
-  background: #354b32;
+  background: var(--soft);
 }
 .aim-dialog button:focus-visible,
 .aim-dialog input:focus-visible,
 .aim-dialog select:focus-visible {
-  outline: 3px solid #c4ff52;
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
 .aim-setup {
   line-height: 1.8;
   font-size: 14px;
-  color: #c7d2c9;
+  color: var(--muted);
 }
 .aim-setup b {
-  color: #c4ff52;
+  color: var(--accent);
 }
 .aim-options {
   display: grid;
@@ -93,9 +94,9 @@
 .aim-options select {
   width: 100%;
   min-width: 0;
-  background: #19262c;
-  color: #fff;
-  border: 1px solid #59665d;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--line);
   border-radius: 7px;
   padding: 10px;
   font: inherit;
@@ -105,10 +106,14 @@
 .aim-results p {
   font-size: 13px;
   line-height: 1.6;
-  color: #b5c5bb;
+  color: var(--muted);
   margin: 0;
 }
 .aim-arena {
+  /* The game viewport retains its own dark, high-contrast palette. */
+  --accent: #9bc5ac;
+  --on-accent: #17251c;
+  color: #edf3ed;
   height: 420px;
   position: relative;
   border: 1px solid #45604d;
@@ -155,12 +160,12 @@
   line-height: 1.6;
 }
 .aim-overlay button {
-  background: #c4ff52;
-  color: #15200d;
-  border-color: #c4ff52;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
 }
 .aim-overlay button:hover {
-  background: #d8ff94;
+  background: var(--accent);
 }
 .aim-actions {
   display: flex;
@@ -170,7 +175,7 @@
 }
 .aim-note {
   padding: 12px 0;
-  border-top: 1px solid #34453b;
+  border-top: 1px solid var(--line);
 }
 .aim-results {
   margin-top: 20px;
@@ -188,7 +193,7 @@
 .aim-results td {
   text-align: left;
   padding: 12px;
-  border-bottom: 1px solid #34453b;
+  border-bottom: 1px solid var(--line);
 }
 .aim-dialog button:disabled {
   opacity: 0.5;
@@ -208,6 +213,10 @@
     grid-template-columns: 1fr;
   }
   .aim-arena {
+    /* The game viewport retains its own dark, high-contrast palette. */
+    --accent: #9bc5ac;
+    --on-accent: #17251c;
+    color: #edf3ed;
     height: 300px;
   }
   .aim-hud {
@@ -234,11 +243,11 @@
   align-items: center;
   gap: 10px;
   font-size: 13px;
-  color: #c6d1c8;
+  color: var(--muted);
   margin: 14px 0;
 }
 .aim-raw input {
-  accent-color: #c4ff52;
+  accent-color: var(--accent);
   width: 18px;
   height: 18px;
   flex-shrink: 0;
@@ -254,12 +263,12 @@
   padding: 10px 13px;
 }
 .range-modes button[aria-pressed='true'] {
-  background: #c4ff52;
-  color: #15200d;
-  border-color: #c4ff52;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
 }
 .range-brief {
-  color: #c4cfc5;
+  color: var(--muted);
   font-size: 13px;
   line-height: 1.6;
 }
@@ -268,13 +277,13 @@
   align-items: center;
   gap: 12px;
   font-size: 13px;
-  color: #c6d1c8;
+  color: var(--muted);
 }
 .range-crosshair select,
 .range-comfort select {
-  background: #19262c;
-  color: #fff;
-  border: 1px solid #59665d;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--line);
   border-radius: 7px;
   padding: 8px;
   font: inherit;
@@ -282,8 +291,8 @@
 .range-breakdown {
   margin: 24px 0;
   padding: 20px;
-  background: #18271f;
-  border: 1px solid #455b43;
+  background: var(--bg);
+  border: 1px solid var(--line);
   border-radius: 12px;
 }
 .range-breakdown > div {
@@ -292,22 +301,22 @@
   gap: 12px;
 }
 .range-breakdown article {
-  background: #101c17;
+  background: var(--paper);
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid #344c37;
+  border: 1px solid var(--line);
 }
 .range-breakdown h4 {
   margin: 0 0 12px;
-  color: #eaf2dd;
+  color: var(--ink);
 }
 .range-breakdown strong {
-  color: #c4ff52;
+  color: var(--accent);
 }
 .range-breakdown p {
   font-size: 13px;
   line-height: 1.6;
-  color: #b9c8b9;
+  color: var(--muted);
 }
 .range-comfort {
   display: grid;
@@ -375,10 +384,10 @@
 .coaching-report {
   margin: 28px 0;
   padding: 24px;
-  border: 1px solid #526d43;
+  border: 1px solid var(--line);
   border-radius: 14px;
-  background: #14231b;
-  color: #e9f1e5;
+  background: var(--paper);
+  color: var(--ink);
 }
 .coaching-report h3 {
   font-size: 28px;
@@ -387,7 +396,7 @@
 .coaching-report p {
   font-size: 14px;
   line-height: 1.7;
-  color: #c1cebf;
+  color: var(--muted);
 }
 .report-summary {
   display: grid;
@@ -397,22 +406,22 @@
 }
 .report-summary article {
   padding: 20px;
-  background: #1d3021;
-  border: 1px solid #3f5942;
+  background: var(--bg);
+  border: 1px solid var(--line);
   border-radius: 10px;
 }
 .report-summary article + article {
-  background: #302c1c;
-  border-color: #625737;
+  background: var(--bg);
+  border-color: var(--line);
 }
 .report-summary article > span {
   font-size: 11px;
   letter-spacing: 1.3px;
   font-weight: 800;
-  color: #b9df8c;
+  color: var(--accent);
 }
 .report-summary article + article > span {
-  color: #efd495;
+  color: var(--accent);
 }
 .coaching-report h4 {
   font-size: 18px;
@@ -425,8 +434,8 @@
   gap: 24px;
   align-items: center;
   padding: 22px;
-  background: #263b20;
-  border: 1px solid #739a43;
+  background: var(--bg);
+  border: 1px solid var(--line);
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -440,9 +449,9 @@
 .report-challenge button {
   flex-shrink: 0;
   max-width: 270px;
-  background: #c4ff52;
-  color: #16230e;
-  border-color: #c4ff52;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
 }
 .report-skills {
   display: grid;
@@ -451,8 +460,8 @@
 }
 .report-skill {
   min-width: 0;
-  background: #101c17;
-  border: 1px solid #354b3b;
+  background: var(--paper);
+  border: 1px solid var(--line);
   border-radius: 10px;
   padding: 20px;
 }
@@ -490,30 +499,30 @@
 }
 .report-metric strong {
   font-size: 36px;
-  color: #e6f5cc;
+  color: var(--ink);
   font-variant-numeric: tabular-nums;
 }
 .report-metric span {
-  color: #b5c7b4;
+  color: var(--muted);
   font-size: 13px;
 }
 .report-skill meter {
   width: 100%;
   height: 10px;
-  accent-color: #c4ff52;
+  accent-color: var(--accent);
 }
 .report-skill meter::-webkit-meter-bar {
-  background: #2b3c2f;
+  background: var(--soft);
   border: 0;
   border-radius: 6px;
 }
 .report-skill meter::-webkit-meter-optimum-value {
-  background: #a9da64;
+  background: var(--accent);
   border-radius: 6px;
 }
 .report-evidence {
   padding-left: 18px;
-  color: #b5c6b6;
+  color: var(--muted);
   font-size: 13px;
   line-height: 1.7;
   margin: 16px 0;
@@ -521,7 +530,7 @@
 .report-skill h5 {
   font-size: 14px;
   margin: 22px 0 8px;
-  color: #f2f5de;
+  color: var(--ink);
 }
 .report-skill p {
   font-size: 13px;
@@ -530,15 +539,15 @@
 .report-delta {
   padding: 12px;
   margin-top: 16px;
-  background: #203128;
-  border-left: 3px solid #a9da64;
+  background: var(--soft);
+  border-left: 3px solid var(--accent);
 }
 .report-delta h5 {
   margin-top: 0;
 }
 .report-goal {
   padding: 12px 0;
-  border-top: 1px solid #354b3b;
+  border-top: 1px solid var(--line);
 }
 .report-skill button {
   font-size: 13px;
@@ -550,21 +559,21 @@
   margin: 24px 0;
 }
 .report-method {
-  border-top: 1px solid #425c44;
+  border-top: 1px solid var(--line);
   padding-top: 18px;
   font-size: 13px;
-  color: #b7c7b9;
+  color: var(--muted);
 }
 .report-method summary {
   cursor: pointer;
-  color: #d1dfcb;
+  color: var(--ink);
 }
 .report-method p {
   font-size: 13px;
 }
 .coaching-report .range-comfort {
   padding: 18px;
-  background: #1d2d25;
+  background: var(--bg);
   border-radius: 8px;
 }
 .coaching-report .range-comfort p {
@@ -629,9 +638,9 @@
 }
 .coaching-report .range-comfort button {
   justify-self: start;
-  background: #c4ff52;
-  border-color: #c4ff52;
-  color: #15200d;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
   font-weight: 800;
   padding: 12px 20px;
   border-radius: 8px;
@@ -659,6 +668,10 @@ body:has(.aim-dialog[open]) {
   overscroll-behavior: contain;
 }
 .aim-arena {
+  /* The game viewport retains its own dark, high-contrast palette. */
+  --accent: #9bc5ac;
+  --on-accent: #17251c;
+  color: #edf3ed;
   contain: layout paint;
 }
 .aim-hud {

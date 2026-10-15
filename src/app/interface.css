@@ -1,0 +1,553 @@
+/* Quiet utility interface. Structural layouts live in globals.css. */
+body {
+  font-family: var(--sans);
+}
+::selection {
+  background: var(--soft);
+  color: var(--ink);
+}
+.page-width,
+.header-inner,
+.site-footer {
+  max-width: 1080px;
+}
+.header-inner {
+  height: 72px;
+  gap: 24px;
+}
+.brand {
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.7px;
+}
+.brand svg {
+  width: 27px;
+  height: 27px;
+}
+.header-inner nav {
+  font-size: 14px;
+  gap: 28px;
+}
+.header-inner nav a:hover,
+.contents nav a:hover {
+  color: var(--accent);
+}
+.theme-button {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.hero {
+  padding: 36px 0 28px;
+  display: block;
+}
+.hero h1 {
+  font: 650 36px/1.2 var(--sans);
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+.hero p {
+  font-size: 15px;
+  max-width: 680px;
+  line-height: 1.6;
+}
+.converter {
+  padding: 28px;
+  border-radius: 10px;
+  box-shadow: none;
+}
+button {
+  transition:
+    background-color 150ms,
+    border-color 150ms;
+}
+button:hover:not(:disabled) {
+  background: var(--soft);
+}
+input,
+select,
+textarea {
+  background: var(--paper);
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+}
+.tool-toolbar {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  gap: 12px;
+}
+.segmented {
+  border-radius: 8px;
+}
+.segmented button {
+  min-height: 40px;
+  font-size: 13px;
+  padding: 8px 14px;
+}
+.segmented button[aria-pressed='true'] {
+  color: var(--accent);
+  box-shadow: none;
+  font-weight: 600;
+}
+.text-button {
+  font-size: 13px;
+  letter-spacing: 0;
+}
+.step-caption {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--ink);
+  margin-bottom: 18px;
+}
+.example-tag {
+  font: 12px var(--sans);
+  letter-spacing: 0;
+  padding: 3px 8px;
+  background: var(--bg);
+  color: var(--muted);
+  border-radius: 4px;
+}
+.field-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+.game-trigger {
+  height: 52px;
+  font-size: 14px;
+}
+.game-badge {
+  font: 600 11px var(--sans);
+  background: var(--bg);
+  color: var(--muted);
+  min-width: 30px;
+  text-align: center;
+}
+.game-menu {
+  box-shadow: 0 8px 24px #00000014;
+}
+.game-option button,
+.game-menu small {
+  font-size: 13px;
+}
+.numeric-field input {
+  font: 20px/1.4 var(--mono);
+  padding: 11px 12px;
+}
+.target-dpi input {
+  font-size: 20px;
+}
+.profile-note,
+.target-dpi small,
+.target-setting-note {
+  font-size: 13px;
+}
+.swap {
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--muted);
+}
+.result-panel {
+  background: var(--soft);
+  color: var(--ink);
+  border: 1px solid var(--result-line);
+  border-radius: 8px;
+  padding: 20px;
+}
+.result-heading {
+  font-size: 13px;
+}
+.result-indicator {
+  font: 11px var(--sans);
+  letter-spacing: 0;
+  color: var(--muted);
+}
+.result-number output {
+  font: 600 38px/1.25 var(--mono);
+  color: var(--accent);
+  letter-spacing: -1.5px;
+}
+.result-copy {
+  background: var(--paper);
+  border-color: var(--result-line);
+  color: var(--accent);
+  font-size: 13px;
+  padding: 9px 12px;
+}
+.result-copy:hover:not(:disabled) {
+  background: var(--paper);
+  border-color: var(--accent);
+}
+.result-bottom {
+  color: var(--muted);
+  font-size: 12px;
+}
+.result-bottom select {
+  color: var(--ink);
+  background: var(--paper);
+  border-color: var(--result-line);
+  font-size: 12px;
+  width: 44px;
+}
+.result-panel.invalid {
+  background: var(--bg);
+  border-color: var(--line);
+}
+.metric-grid {
+  gap: 16px;
+  margin: 24px 0;
+}
+.metric {
+  background: transparent;
+  padding: 14px 16px;
+  border-radius: 6px;
+}
+.metric > span,
+.metric small {
+  font-size: 12px;
+}
+.metric strong {
+  font: 500 23px var(--mono);
+}
+.quiet {
+  font-size: 12px;
+}
+.distance-control strong {
+  font: 20px var(--mono);
+}
+.ruler-labels {
+  font: 12px var(--sans);
+}
+.lock {
+  font-size: 12px;
+}
+.advanced summary,
+.calculation summary,
+.setting-guide summary {
+  font-size: 14px;
+}
+.notice,
+.source-note,
+.status,
+.profile-status:not(:empty) {
+  font-size: 13px;
+  background: var(--bg);
+  border-radius: 6px;
+}
+.action-primary,
+html[data-theme='dark'] .action-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+.action-primary:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--on-accent);
+  filter: brightness(0.95);
+}
+.tool-actions .action-primary,
+.saved > .action-primary {
+  color: var(--ink);
+  background: var(--paper);
+  border-color: var(--line);
+  box-shadow: none;
+}
+.saved > .action-primary:hover:not(:disabled) {
+  box-shadow: none;
+  background: var(--soft);
+  filter: none;
+}
+.tool-actions button,
+.tool-actions a,
+.export-form button {
+  font-size: 13px;
+}
+.local-note {
+  font-size: 12px;
+}
+.quick-pairs {
+  padding: 20px 0;
+  gap: 8px;
+}
+.quick-pairs > span {
+  font-size: 12px;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+.quick-pairs button {
+  font-size: 12px;
+  background: var(--paper);
+}
+.comparison,
+.saved {
+  padding: 24px;
+  border-radius: 8px;
+}
+.utility-grid h2,
+.contents h2 {
+  font-size: 22px;
+  letter-spacing: -0.5px;
+}
+.utility-grid p,
+.comparison > input {
+  font-size: 13px;
+}
+th,
+td {
+  font-size: 13px;
+  padding-block: 12px;
+}
+.table-wrap tbody tr:hover {
+  background: var(--bg);
+}
+.empty {
+  border-style: solid;
+  background: var(--bg);
+}
+.section-kicker {
+  font: 500 12px var(--sans);
+  letter-spacing: 0;
+  color: var(--muted);
+}
+.guide-layout {
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 56px;
+  margin-top: 64px;
+}
+.contents nav a,
+.back-tool {
+  font-size: 14px;
+}
+.guide > section {
+  margin-bottom: 48px;
+}
+.guide h2 {
+  font-size: 26px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+.guide h3 {
+  font-size: 18px;
+}
+.guide p {
+  font-size: 15px;
+  line-height: 1.8;
+}
+.guide .formula {
+  font: 13px/1.8 var(--mono);
+}
+.faq summary {
+  font-size: 15px;
+}
+.faq p {
+  padding-left: 0;
+}
+.sources {
+  font-size: 13px;
+}
+.site-footer {
+  padding-block: 32px;
+}
+.site-footer nav {
+  font-size: 13px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.site-footer > small {
+  font-size: 12px;
+}
+.info-page h1 {
+  font-size: 36px;
+}
+.mobile-result {
+  background: var(--paper);
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+  box-shadow: none;
+}
+.mobile-result strong {
+  color: var(--accent);
+}
+.converter-feedback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 24px 0 12px;
+  padding: 18px 0;
+  border-block: 1px solid var(--line);
+}
+.converter-feedback strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+.converter-feedback p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.feedback-open-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 10px 16px;
+  font-size: 13px;
+  background: var(--paper);
+}
+.feedback-open-button svg {
+  flex-shrink: 0;
+}
+.export-form {
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.export-status {
+  display: block;
+  max-width: 32ch;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+.clear-confirmation {
+  margin-top: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.clear-confirmation p {
+  font-size: 13px;
+}
+.clear-confirmation button {
+  margin: 4px;
+}
+@media (max-width: 1140px) {
+  .page-width,
+  .header-inner,
+  .site-footer {
+    margin-inline: 28px;
+  }
+}
+@media (max-width: 760px) {
+  .header-inner {
+    height: 64px;
+    gap: 16px;
+  }
+  .header-inner nav {
+    gap: 16px;
+    font-size: 13px;
+  }
+  .hero {
+    padding: 28px 0 24px;
+  }
+  .hero h1 {
+    font-size: 30px;
+  }
+  .hero p {
+    font-size: 14px;
+  }
+  .converter {
+    padding: 22px;
+  }
+  .result-number output {
+    font-size: 36px;
+  }
+  .guide-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 48px;
+  }
+  .contents nav {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .page-width,
+  .header-inner,
+  .site-footer {
+    margin-inline: 16px;
+  }
+  .header-inner {
+    gap: 12px;
+  }
+  .brand {
+    font-size: 21px;
+    gap: 7px;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .converter {
+    padding: 16px;
+  }
+  .tool-toolbar {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 16px;
+  }
+  .segmented {
+    flex: 1 1 auto;
+  }
+  .segmented button {
+    padding: 8px;
+    font-size: 12px;
+    flex: 1;
+  }
+  .text-button {
+    font-size: 12px;
+  }
+  .numeric-field input {
+    font-size: 18px;
+  }
+  .result-panel {
+    padding: 16px;
+  }
+  .result-number {
+    flex-wrap: wrap;
+  }
+  .result-number output {
+    font-size: 32px;
+  }
+  .result-bottom {
+    flex-wrap: wrap;
+  }
+  .metric strong {
+    font-size: 23px;
+  }
+  .comparison,
+  .saved {
+    padding: 18px;
+  }
+  .contents nav {
+    grid-template-columns: 1fr;
+  }
+  .guide h2 {
+    font-size: 24px;
+  }
+  .converter-feedback {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  button {
+    transition: none;
+  }
+}
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .converter {
+    padding: 0;
+    border: 0;
+  }
+}

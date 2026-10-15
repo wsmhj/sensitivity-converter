@@ -10,29 +10,29 @@ export default function Image() {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        background: '#0c0f11',
+        background: '#f7f8fa',
         padding: '64px',
         fontFamily: 'sans-serif',
-        color: '#eef2ef',
+        color: '#202724',
       }}
     >
-      <div style={{ display: 'flex', fontSize: 30, fontWeight: 700, color: '#c4ff52' }}>
+      <div style={{ display: 'flex', fontSize: 30, fontWeight: 700, color: '#306b53' }}>
         turnmatch.
       </div>
       <div
-        style={{ display: 'flex', fontSize: 70, fontWeight: 700, letterSpacing: -3, marginTop: 65 }}
+        style={{ display: 'flex', fontSize: 62, fontWeight: 700, letterSpacing: -3, marginTop: 65 }}
       >
-        Sensitivity converter.
+        Sensitivity Converter
       </div>
-      <div style={{ display: 'flex', fontSize: 25, color: '#a1adaf', marginTop: 20 }}>
-        Your aim. Every arena.
+      <div style={{ display: 'flex', fontSize: 25, color: '#606b65', marginTop: 20 }}>
+        Match your turn distance across games.
       </div>
       <div
         style={{
           display: 'flex',
           marginTop: 48,
-          background: '#c4ff52',
-          color: '#18200e',
+          background: '#eef5f1',
+          color: '#306b53',
           padding: '26px 32px',
           borderRadius: 4,
           alignItems: 'center',

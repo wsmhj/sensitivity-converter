@@ -471,7 +471,7 @@ export default function Converter({
         <div className="conversion-grid">
           <div className="source-column">
             <div className="step-caption">
-              <span>01</span> YOUR CURRENT SETUP
+              Your current setup
               {s.from === 'cs2' &&
                 s.to === 'valorant' &&
                 s.input === '1' &&
@@ -480,7 +480,7 @@ export default function Converter({
                 s.mode === 'sens' &&
                 s.match === 'rotation' &&
                 !s.customFrom &&
-                !s.customTo && <small className="example-tag">EXAMPLE</small>}
+                !s.customTo && <small className="example-tag">Example</small>}
             </div>
             <GamePicker
               side="Source"
@@ -505,9 +505,7 @@ export default function Converter({
             ⇄
           </button>
           <div className="target-column">
-            <div className="step-caption">
-              <span>02</span> YOUR NEXT GAME
-            </div>
+            <div className="step-caption">Your next game</div>
             <GamePicker
               side="Target"
               value={s.to}
@@ -534,7 +532,7 @@ export default function Converter({
           >
             <div className="result-heading">
               <span>{to.name} sensitivity</span>
-              <span className="result-indicator">{r ? '● LIVE RESULT' : 'CHECK INPUTS'}</span>
+              <span className="result-indicator">{r ? 'Live result' : 'Check inputs'}</span>
             </div>
             <div className="result-number">
               <output data-testid="main-result">{r ? fmt(r.targetSens) : '—'}</output>
@@ -976,7 +974,6 @@ export default function Converter({
       </div>
       <section className="utility-grid" aria-label="Compare and save settings">
         <div className="comparison" id="compare">
-          <div className="section-kicker">ONE SETUP, EVERY GAME</div>
           <h2>Compare your game sensitivities</h2>
           <p>Reference hipfire values at your target DPI. This table always uses 360° matching.</p>
           <input
@@ -1029,7 +1026,6 @@ export default function Converter({
           </div>
         </div>
         <div className="saved" id="saved-profiles">
-          <div className="section-kicker">YOUR SETTINGS, CLOSE AT HAND</div>
           <h2>Keep a setup for later</h2>
           <p>Save up to 20 profiles on this device. No account or cloud sync.</p>
           <label className="numeric-field">
