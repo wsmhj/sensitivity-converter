@@ -1,13 +1,154 @@
 'use client';
-import {useState} from 'react';
-import {decimal} from '@/lib/numeric';
-import {fovAngles,measuredYaw} from '@/lib/measurements';
-import {format} from '@/lib/conversion';
-export default function MeasurementTools({applyFov,applyYaw}:{applyFov:(side:'from'|'to',value:number)=>void;applyYaw:(side:'from'|'to',value:number)=>void}){
-  const [angle,setAngle]=useState('90'),[axis,setAxis]=useState<'horizontal'|'vertical'|'diagonal'|'h43'>('h43'),[width,setWidth]=useState('1920'),[height,setHeight]=useState('1080');
-  const [sens,setSens]=useState('1'),[dpi,setDpi]=useState('800'),[distance,setDistance]=useState('51.95454545454546'),[unit,setUnit]=useState<'cm'|'in'>('cm');
-  const f=angle.trim()&&width.trim()&&height.trim()?fovAngles(decimal(angle),decimal(width),decimal(height),axis):null;
-  const yaw=sens.trim()&&dpi.trim()&&distance.trim()?measuredYaw(decimal(sens),decimal(dpi),decimal(distance),unit):null;
-  function input(label:string,value:string,change:(v:string)=>void){return <label className="numeric-field"><span className="field-label">{label}</span><input aria-label={label} inputMode="decimal" value={value} onChange={e=>change(e.target.value)}/></label>}
-  return <details className="measurement-tools"><summary>FOV conversion &amp; measured-game calibration</summary><div className="measurement-grid"><section><h3>Convert your FOV convention</h3><p>Use a perspective camera model to translate vertical, diagonal or 4:3-based menu values into actual horizontal degrees.</p><label className="numeric-field"><span className="field-label">FOV convention</span><select aria-label="FOV convention" value={axis} onChange={e=>setAxis(e.target.value as typeof axis)}><option value="h43">Horizontal, 4:3 reference</option><option value="horizontal">Actual horizontal</option><option value="vertical">Vertical</option><option value="diagonal">Diagonal</option></select></label><div className="three-fields">{input('FOV value (°)',angle,setAngle)}{input('Viewport width',width,setWidth)}{input('Viewport height',height,setHeight)}</div>{f?<p className="measurement-result">Horizontal <strong>{format(f.horizontal,5)}°</strong><br/>Vertical {format(f.vertical,5)}° · Diagonal {format(f.diagonal,5)}°</p>:<p role="alert">Enter an angle between 0° and 180° and viewport dimensions from 1 to 100,000 pixels.</p>}<div className="tool-actions"><button disabled={!f} onClick={()=>f&&applyFov('from',f.horizontal)}>Use source FOV</button><button disabled={!f} onClick={()=>f&&applyFov('to',f.horizontal)}>Use target FOV</button></div><small>Applying a value enables horizontal monitor matching. Aspect ratio describes the rendered view, including any letterboxing. <a href="https://docs.unity.com/en-us/engine/6000.0/script-reference/unityengine/camera/verticaltohorizontalfieldofview" target="_blank" rel="noopener noreferrer">Camera reference ↗</a></small></section><section><h3>Calibrate an unlisted linear scale</h3><p>Measure one complete turn at a known sensitivity and DPI. The sensitivity converter can derive the yaw instead of guessing a game factor.</p><div className="two-fields">{input('Measured sensitivity',sens,setSens)}{input('Measured DPI',dpi,setDpi)}{input('Measured turn distance',distance,setDistance)}<label><span className="field-label">Measured distance unit</span><select aria-label="Measured distance unit" value={unit} onChange={e=>{const next=e.target.value as typeof unit;if(decimal(distance)>0)setDistance(String(decimal(distance)*(next==='in'?1/2.54:2.54)));setUnit(next);}}><option value="cm">Centimeters</option><option value="in">Inches</option></select></label></div>{yaw?<p className="measurement-result">Measured yaw <strong>{format(yaw,8)}</strong>°/count</p>:<p role="alert">Enter positive finite measurements that produce a yaw at most 360°/count.</p>}<div className="tool-actions"><button disabled={!yaw} onClick={()=>yaw&&applyYaw('from',yaw)}>Use source measured yaw</button><button disabled={!yaw} onClick={()=>yaw&&applyYaw('to',yaw)}>Use target measured yaw</button></div><small>yaw = 914.4 ÷ (sensitivity × DPI × cm/360). Repeat at another sensitivity to check linearity. A single measurement does not establish a nonlinear game's curve or automatic ADS rule.</small></section></div></details>;
+import { useState } from 'react';
+import { decimal } from '@/lib/numeric';
+import { fovAngles, measuredYaw } from '@/lib/measurements';
+import { format } from '@/lib/conversion';
+export default function MeasurementTools({
+  applyFov,
+  applyYaw,
+}: {
+  applyFov: (side: 'from' | 'to', value: number) => void;
+  applyYaw: (side: 'from' | 'to', value: number) => void;
+}) {
+  const [angle, setAngle] = useState('90'),
+    [axis, setAxis] = useState<'horizontal' | 'vertical' | 'diagonal' | 'h43'>('h43'),
+    [width, setWidth] = useState('1920'),
+    [height, setHeight] = useState('1080');
+  const [sens, setSens] = useState('1'),
+    [dpi, setDpi] = useState('800'),
+    [distance, setDistance] = useState('51.95454545454546'),
+    [unit, setUnit] = useState<'cm' | 'in'>('cm');
+  const f =
+    angle.trim() && width.trim() && height.trim()
+      ? fovAngles(decimal(angle), decimal(width), decimal(height), axis)
+      : null;
+  const yaw =
+    sens.trim() && dpi.trim() && distance.trim()
+      ? measuredYaw(decimal(sens), decimal(dpi), decimal(distance), unit)
+      : null;
+  function input(label: string, value: string, change: (v: string) => void) {
+    return (
+      <label className="numeric-field">
+        <span className="field-label">{label}</span>
+        <input
+          aria-label={label}
+          inputMode="decimal"
+          value={value}
+          onChange={(e) => change(e.target.value)}
+        />
+      </label>
+    );
+  }
+  return (
+    <details className="measurement-tools">
+      <summary>FOV conversion &amp; measured-game calibration</summary>
+      <div className="measurement-grid">
+        <section>
+          <h3>Convert your FOV convention</h3>
+          <p>
+            Use a perspective camera model to translate vertical, diagonal or 4:3-based menu values
+            into actual horizontal degrees.
+          </p>
+          <label className="numeric-field">
+            <span className="field-label">FOV convention</span>
+            <select
+              aria-label="FOV convention"
+              value={axis}
+              onChange={(e) => setAxis(e.target.value as typeof axis)}
+            >
+              <option value="h43">Horizontal, 4:3 reference</option>
+              <option value="horizontal">Actual horizontal</option>
+              <option value="vertical">Vertical</option>
+              <option value="diagonal">Diagonal</option>
+            </select>
+          </label>
+          <div className="three-fields">
+            {input('FOV value (°)', angle, setAngle)}
+            {input('Viewport width', width, setWidth)}
+            {input('Viewport height', height, setHeight)}
+          </div>
+          {f ? (
+            <p className="measurement-result">
+              Horizontal <strong>{format(f.horizontal, 5)}°</strong>
+              <br />
+              Vertical {format(f.vertical, 5)}° · Diagonal {format(f.diagonal, 5)}°
+            </p>
+          ) : (
+            <p role="alert">
+              Enter an angle between 0° and 180° and viewport dimensions from 1 to 100,000 pixels.
+            </p>
+          )}
+          <div className="tool-actions">
+            <button disabled={!f} onClick={() => f && applyFov('from', f.horizontal)}>
+              Use source FOV
+            </button>
+            <button disabled={!f} onClick={() => f && applyFov('to', f.horizontal)}>
+              Use target FOV
+            </button>
+          </div>
+          <small>
+            Applying a value enables horizontal monitor matching. Aspect ratio describes the
+            rendered view, including any letterboxing.{' '}
+            <a
+              href="https://docs.unity.com/en-us/engine/6000.0/script-reference/unityengine/camera/verticaltohorizontalfieldofview"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Camera reference ↗
+            </a>
+          </small>
+        </section>
+        <section>
+          <h3>Calibrate an unlisted linear scale</h3>
+          <p>
+            Measure one complete turn at a known sensitivity and DPI. The sensitivity converter can
+            derive the yaw instead of guessing a game factor.
+          </p>
+          <div className="two-fields">
+            {input('Measured sensitivity', sens, setSens)}
+            {input('Measured DPI', dpi, setDpi)}
+            {input('Measured turn distance', distance, setDistance)}
+            <label>
+              <span className="field-label">Measured distance unit</span>
+              <select
+                aria-label="Measured distance unit"
+                value={unit}
+                onChange={(e) => {
+                  const next = e.target.value as typeof unit;
+                  if (decimal(distance) > 0)
+                    setDistance(String(decimal(distance) * (next === 'in' ? 1 / 2.54 : 2.54)));
+                  setUnit(next);
+                }}
+              >
+                <option value="cm">Centimeters</option>
+                <option value="in">Inches</option>
+              </select>
+            </label>
+          </div>
+          {yaw ? (
+            <p className="measurement-result">
+              Measured yaw <strong>{format(yaw, 8)}</strong>°/count
+            </p>
+          ) : (
+            <p role="alert">
+              Enter positive finite measurements that produce a yaw at most 360°/count.
+            </p>
+          )}
+          <div className="tool-actions">
+            <button disabled={!yaw} onClick={() => yaw && applyYaw('from', yaw)}>
+              Use source measured yaw
+            </button>
+            <button disabled={!yaw} onClick={() => yaw && applyYaw('to', yaw)}>
+              Use target measured yaw
+            </button>
+          </div>
+          <small>
+            yaw = 914.4 ÷ (sensitivity × DPI × cm/360). Repeat at another sensitivity to check
+            linearity. A single measurement does not establish a nonlinear game's curve or automatic
+            ADS rule.
+          </small>
+        </section>
+      </div>
+    </details>
+  );
 }

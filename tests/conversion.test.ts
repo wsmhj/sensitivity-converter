@@ -1,13 +1,79 @@
-import {test} from 'node:test';
+import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import {calculate,DEFAULTS,decodeSettings,encodeSettings,format,report,type Settings} from '../src/lib/conversion';
-function result(p:Partial<Settings>={}){const o=calculate({...DEFAULTS,...p});assert.equal(o.ok,true);if(!o.ok)throw Error('Invalid fixture');return o.result;}
-function near(a:number,b:number){assert.ok(Math.abs(a-b)<Math.max(1,Math.abs(b))*1e-12,`${a} != ${b}`);}
-test('independent degree-per-inch baseline and different target DPI',()=>{const r=result();near(r.targetSens,11/35);near(r.sourceCm,360*2.54/(1*.022*800));near(r.targetCm,r.sourceCm);near(result({dpiTo:'1600'}).targetSens,11/70);});
-test('distance input and inch input are equivalent',()=>{const a=result({mode:'cm',input:'40'}),b=result({mode:'in',input:String(40/2.54)});near(a.sourceSens,1.2988636363636363);near(a.targetSens,b.targetSens);near(result({mode:'cm',input:'40',dpiFrom:'1600'}).sourceSens,.6494318181818182);});
-test('round trip preserves precision rather than the visible rounded value',()=>{const a=result(),b=result({from:'valorant',to:'cs2',input:String(a.targetSens)});near(b.targetSens,1);});
-test('horizontal monitor match uses perspective angle ratio',()=>{const a=result({match:'monitor',fovFrom:'90',fovTo:'60',matchPercent:'0'});near(a.factor,1/Math.sqrt(3));const b=result({match:'monitor',fovFrom:'90',fovTo:'60',matchPercent:'100'});near(b.factor,2/3);assert.notEqual(b.targetCm,b.sourceCm);});
-test('invalid inputs never return stale results',()=>{for(const input of ['', '0','-1','NaN','Infinity','1e99'])assert.equal(calculate({...DEFAULTS,input}).ok,false);assert.equal(calculate({...DEFAULTS,dpiTo:'0'}).ok,false);assert.equal(calculate({...DEFAULTS,match:'monitor',fovTo:'180'}).ok,false);assert.equal(calculate({...DEFAULTS,customFrom:true,yawFrom:'0'}).ok,false);});
-test('share schema validation and custom values round trip',()=>{const s={...DEFAULTS,customFrom:true,yawFrom:'0.03',mode:'cm' as const,input:'40'};assert.deepEqual(decodeSettings(encodeSettings(s)),s);assert.equal(decodeSettings('broken'),null);assert.equal(decodeSettings(encodeURIComponent(JSON.stringify({...s,v:2}))),null);});
-test('tiny positive values stay positive when displayed and report retains precision',()=>{assert.ok(Number(format(1e-12))>0);const r=result();near(Number(report(DEFAULTS,r).match(/Target sensitivity \(full precision\): (.+)/)![1]),11/35);});
-test('finite main distance cannot hide overflowing mouse counts',()=>{assert.equal(calculate({...DEFAULTS,input:'1e-300',dpiFrom:'10000000',customFrom:true,yawFrom:'1e-10'}).ok,false);});
+import {
+  calculate,
+  DEFAULTS,
+  decodeSettings,
+  encodeSettings,
+  format,
+  report,
+  type Settings,
+} from '../src/lib/conversion';
+function result(p: Partial<Settings> = {}) {
+  const o = calculate({ ...DEFAULTS, ...p });
+  assert.equal(o.ok, true);
+  if (!o.ok) throw Error('Invalid fixture');
+  return o.result;
+}
+function near(a: number, b: number) {
+  assert.ok(Math.abs(a - b) < Math.max(1, Math.abs(b)) * 1e-12, `${a} != ${b}`);
+}
+test('independent degree-per-inch baseline and different target DPI', () => {
+  const r = result();
+  near(r.targetSens, 11 / 35);
+  near(r.sourceCm, (360 * 2.54) / (1 * 0.022 * 800));
+  near(r.targetCm, r.sourceCm);
+  near(result({ dpiTo: '1600' }).targetSens, 11 / 70);
+});
+test('distance input and inch input are equivalent', () => {
+  const a = result({ mode: 'cm', input: '40' }),
+    b = result({ mode: 'in', input: String(40 / 2.54) });
+  near(a.sourceSens, 1.2988636363636363);
+  near(a.targetSens, b.targetSens);
+  near(result({ mode: 'cm', input: '40', dpiFrom: '1600' }).sourceSens, 0.6494318181818182);
+});
+test('round trip preserves precision rather than the visible rounded value', () => {
+  const a = result(),
+    b = result({ from: 'valorant', to: 'cs2', input: String(a.targetSens) });
+  near(b.targetSens, 1);
+});
+test('horizontal monitor match uses perspective angle ratio', () => {
+  const a = result({ match: 'monitor', fovFrom: '90', fovTo: '60', matchPercent: '0' });
+  near(a.factor, 1 / Math.sqrt(3));
+  const b = result({ match: 'monitor', fovFrom: '90', fovTo: '60', matchPercent: '100' });
+  near(b.factor, 2 / 3);
+  assert.notEqual(b.targetCm, b.sourceCm);
+});
+test('invalid inputs never return stale results', () => {
+  for (const input of ['', '0', '-1', 'NaN', 'Infinity', '1e99'])
+    assert.equal(calculate({ ...DEFAULTS, input }).ok, false);
+  assert.equal(calculate({ ...DEFAULTS, dpiTo: '0' }).ok, false);
+  assert.equal(calculate({ ...DEFAULTS, match: 'monitor', fovTo: '180' }).ok, false);
+  assert.equal(calculate({ ...DEFAULTS, customFrom: true, yawFrom: '0' }).ok, false);
+});
+test('share schema validation and custom values round trip', () => {
+  const s = { ...DEFAULTS, customFrom: true, yawFrom: '0.03', mode: 'cm' as const, input: '40' };
+  assert.deepEqual(decodeSettings(encodeSettings(s)), s);
+  assert.equal(decodeSettings('broken'), null);
+  assert.equal(decodeSettings(encodeURIComponent(JSON.stringify({ ...s, v: 2 }))), null);
+});
+test('tiny positive values stay positive when displayed and report retains precision', () => {
+  assert.ok(Number(format(1e-12)) > 0);
+  const r = result();
+  near(
+    Number(report(DEFAULTS, r).match(/Target sensitivity \(full precision\): (.+)/)![1]),
+    11 / 35,
+  );
+});
+test('finite main distance cannot hide overflowing mouse counts', () => {
+  assert.equal(
+    calculate({
+      ...DEFAULTS,
+      input: '1e-300',
+      dpiFrom: '10000000',
+      customFrom: true,
+      yawFrom: '1e-10',
+    }).ok,
+    false,
+  );
+});

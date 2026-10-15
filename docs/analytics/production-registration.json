@@ -1,0 +1,12 @@
+{
+  "website_id": "turnmatch",
+  "site_id": "turnmatch_production",
+  "environment": "production",
+  "origins": [
+    "https://sensitivityconverter.me"
+  ],
+  "sql": "select public.analytics_register_site('turnmatch_production','turnmatch','production','Turnmatch Sensitivity Converter',array['https://sensitivityconverter.me']);\n",
+  "snippet": "<script defer src=\"https://szqxprjpaccnskjqdrkq.supabase.co/functions/v1/analytics/tracker.js\" data-consent=\"granted\"></script>",
+  "consent_note": "仅在网站满足采集条件时使用 data-consent=\"granted\"；否则删除该属性并由已有同意机制调用 WebAnalytics.setConsent(true)。",
+  "status": "prepared_not_executed"
+}

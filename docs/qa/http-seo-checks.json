@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-10-15T11:02:04.851Z",
+  "origin": "http://127.0.0.1:3000",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "title": "Sensitivity Converter — CS2, Valorant, DPI &amp; cm/360 | Turnmatch",
+      "h1": 1
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "title": "About | Turnmatch",
+      "h1": 1
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "title": "Contact | Turnmatch",
+      "h1": 1
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "title": "Privacy | Turnmatch",
+      "h1": 1
+    },
+    {
+      "path": "/terms",
+      "status": 200,
+      "title": "Terms | Turnmatch",
+      "h1": 1
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "contentType": "text/plain"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "contentType": "application/xml"
+    },
+    {
+      "path": "/opengraph-image",
+      "status": 200,
+      "contentType": "image/png"
+    }
+  ],
+  "internalLinks": 68,
+  "assets": 13,
+  "schema": "WebApplication + 11 FAQ entries",
+  "missingRoute": 404
+}

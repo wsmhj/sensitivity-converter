@@ -1,21 +1,157 @@
 'use client';
-import {useState} from 'react';
-import {GAME_GUIDES,entryEffect,scopedAdjustment} from '@/lib/game-guides';
-import {format,game} from '@/lib/conversion';
-import {decimal} from '@/lib/numeric';
+import { useState } from 'react';
+import { GAME_GUIDES, entryEffect, scopedAdjustment } from '@/lib/game-guides';
+import { format, game } from '@/lib/conversion';
+import { decimal } from '@/lib/numeric';
+import { PROFILE_EVIDENCE } from '@/lib/profile-evidence';
 
-export function SettingGuide({id,exact,cm,precision,override}:{id:string;exact:number|null;cm:number|null;precision:number;override:boolean}){
-  const [entered,setEntered]=useState<string|null>(null);
-  const guide=GAME_GUIDES[id];
-  const suggested=exact===null?'':id==='r6'?String(Math.max(1,Math.min(100,Math.round(exact)))):format(exact,precision);
-  const value=entered??suggested,number=decimal(value);
-  const invalidStep=id==='r6'&&value.trim()!==''&&(!Number.isInteger(number)||number<1||number>100);
-  const effect=exact!==null&&cm!==null&&!invalidStep?entryEffect(exact,number,cm):null;
-  return <details className="setting-guide"><summary>Where to enter this result in {game(id)?.short}</summary><p><strong>{guide?.field||'Hipfire / horizontal mouse sensitivity'}</strong> — {guide?.instruction||'Use the selected sensitivity scale. Menu names and accepted decimal places vary by version; check that the game retains the value after applying it.'}</p><p>{guide?.scope||game(id)?.note}{override&&' A custom yaw override is active; the default reference no longer applies.'}</p><p>The sensitivity converter display precision is not a guarantee of the game’s accepted precision. Apply your setting, reopen the menu, then enter the number it retained below.</p><label className="numeric-field"><span className="field-label">Value retained by your target game</span><input inputMode="decimal" value={value} onChange={e=>setEntered(e.target.value)} aria-label="Value retained by your target game"/></label>{effect?<p>At <strong>{value}</strong>: {format(effect.actualCm,5)} cm/360 · distance error <strong>{effect.distanceError>=0?'+':''}{format(effect.distanceError,5)}%</strong> against the exact result.</p>:<p role="status">Enter a positive finite value to check the distance error.</p>}{id==='r6'&&exact!==null&&(exact<1||exact>100)&&<p role="alert">The exact result is outside the reference menu range of 1–100. Change target DPI or use a verified custom multiplier; rounding cannot make this result fit.</p>}{invalidStep&&<p role="alert">Enter a whole number from 1 to 100 for the reference R6 menu.</p>}<small>A positive distance error means a slower turn. This checks rounding, not measurement accuracy.</small></details>;
+export function SettingGuide({
+  id,
+  exact,
+  cm,
+  precision,
+  override,
+}: {
+  id: string;
+  exact: number | null;
+  cm: number | null;
+  precision: number;
+  override: boolean;
+}) {
+  const [entered, setEntered] = useState<string | null>(null);
+  const guide = GAME_GUIDES[id];
+  const evidence = PROFILE_EVIDENCE[id];
+  const suggested =
+    exact === null
+      ? ''
+      : id === 'r6'
+        ? String(Math.max(1, Math.min(100, Math.round(exact))))
+        : format(exact, precision);
+  const value = entered ?? suggested,
+    number = decimal(value);
+  const invalidStep =
+    id === 'r6' && value.trim() !== '' && (!Number.isInteger(number) || number < 1 || number > 100);
+  const effect =
+    exact !== null && cm !== null && !invalidStep ? entryEffect(exact, number, cm) : null;
+  return (
+    <details className="setting-guide">
+      <summary>Where to enter this result in {game(id)?.short}</summary>
+      <p>
+        <strong>{guide?.field || 'Hipfire / horizontal mouse sensitivity'}</strong> —{' '}
+        {guide?.instruction ||
+          'Use the selected sensitivity scale. Menu names and accepted decimal places vary by version; check that the game retains the value after applying it.'}
+      </p>
+      <p>
+        {guide?.scope || game(id)?.note}
+        {override && ' A custom yaw override is active; the default reference no longer applies.'}
+      </p>
+      <p>
+        The sensitivity converter display precision is not a guarantee of the game’s accepted
+        precision. Apply your setting, reopen the menu, then enter the number it retained below.
+      </p>
+      <label className="numeric-field">
+        <span className="field-label">Value retained by your target game</span>
+        <input
+          inputMode="decimal"
+          value={value}
+          onChange={(e) => setEntered(e.target.value)}
+          aria-label="Value retained by your target game"
+        />
+      </label>
+      {effect ? (
+        <p>
+          At <strong>{value}</strong>: {format(effect.actualCm, 5)} cm/360 · distance error{' '}
+          <strong>
+            {effect.distanceError >= 0 ? '+' : ''}
+            {format(effect.distanceError, 5)}%
+          </strong>{' '}
+          against the exact result.
+        </p>
+      ) : (
+        <p role="status">Enter a positive finite value to check the distance error.</p>
+      )}
+      {id === 'r6' && exact !== null && (exact < 1 || exact > 100) && (
+        <p role="alert">
+          The exact result is outside the reference menu range of 1–100. Change target DPI or use a
+          verified custom multiplier; rounding cannot make this result fit.
+        </p>
+      )}
+      {invalidStep && (
+        <p role="alert">Enter a whole number from 1 to 100 for the reference R6 menu.</p>
+      )}
+      <small>
+        A positive distance error means a slower turn. This checks rounding, not measurement
+        accuracy.
+      </small>
+      {evidence && (
+        <details className="profile-evidence">
+          <summary>Profile evidence &amp; version status</summary>
+          <p>{evidence.inputRule}</p>
+          <p>
+            {evidence.referenceRecordedAt
+              ? `Reference recorded ${evidence.referenceRecordedAt}. `
+              : 'User-supplied coefficient. '}
+            Current game version and physical turn have not been independently verified by this
+            site.
+          </p>
+          <a href={evidence.source} target="_blank" rel="noopener noreferrer">
+            Read the reference ↗
+          </a>
+        </details>
+      )}
+    </details>
+  );
 }
 
-export function ScopedAssistant({targetCm}:{targetCm:number|null}){
-  const [current,setCurrent]=useState(''),[measured,setMeasured]=useState(''),[desired,setDesired]=useState('');
-  const value=scopedAdjustment(decimal(current),decimal(measured),decimal(desired));
-  return <details className="setting-guide"><summary>ADS / scope: match a measured turn distance</summary><p>This sensitivity converter helper uses your own measurements for one optic. Keep DPI, hipfire sensitivity, FOV and optic unchanged. Measure a full 360° while fully scoped in, away from zoom transitions. All distances below use centimeters.</p><div className="three-fields">{[['Current ADS setting',current,setCurrent],['Measured scoped cm/360',measured,setMeasured],['Desired scoped cm/360',desired,setDesired]].map(([label,v,set])=><label className="numeric-field" key={label as string}><span className="field-label">{label as string}</span><input inputMode="decimal" aria-label={label as string} value={v as string} onChange={e=>(set as (v:string)=>void)(e.target.value)}/></label>)}</div><button disabled={!targetCm} onClick={()=>targetCm&&setDesired(String(targetCm))}>Use target turn distance</button>{value?<p>Estimated ADS setting: <strong>{format(value,8)}</strong><br/>Current setting × measured distance ÷ desired distance.</p>:<p role="alert">Enter positive finite settings and distances.</p>}<p>Use only where the ADS setting scales angular speed proportionally. Test this by doubling the setting: turn distance should halve. Capped, nonlinear or FOV-dependent responses need another measurement. Apply in game and remeasure; repeat for each optic. This estimate is independent of saved/shared converter settings and does not automatically set a game-specific ADS profile.</p></details>;
+export function ScopedAssistant({ targetCm }: { targetCm: number | null }) {
+  const [current, setCurrent] = useState(''),
+    [measured, setMeasured] = useState(''),
+    [desired, setDesired] = useState('');
+  const value = scopedAdjustment(decimal(current), decimal(measured), decimal(desired));
+  return (
+    <details className="setting-guide">
+      <summary>ADS / scope: match a measured turn distance</summary>
+      <p>
+        This sensitivity converter helper uses your own measurements for one optic. Keep DPI,
+        hipfire sensitivity, FOV and optic unchanged. Measure a full 360° while fully scoped in,
+        away from zoom transitions. All distances below use centimeters.
+      </p>
+      <div className="three-fields">
+        {[
+          ['Current ADS setting', current, setCurrent],
+          ['Measured scoped cm/360', measured, setMeasured],
+          ['Desired scoped cm/360', desired, setDesired],
+        ].map(([label, v, set]) => (
+          <label className="numeric-field" key={label as string}>
+            <span className="field-label">{label as string}</span>
+            <input
+              inputMode="decimal"
+              aria-label={label as string}
+              value={v as string}
+              onChange={(e) => (set as (v: string) => void)(e.target.value)}
+            />
+          </label>
+        ))}
+      </div>
+      <button disabled={!targetCm} onClick={() => targetCm && setDesired(String(targetCm))}>
+        Use target turn distance
+      </button>
+      {value ? (
+        <p>
+          Estimated ADS setting: <strong>{format(value, 8)}</strong>
+          <br />
+          Current setting × measured distance ÷ desired distance.
+        </p>
+      ) : (
+        <p role="alert">Enter positive finite settings and distances.</p>
+      )}
+      <p>
+        Use only where the ADS setting scales angular speed proportionally. Test this by doubling
+        the setting: turn distance should halve. Capped, nonlinear or FOV-dependent responses need
+        another measurement. Apply in game and remeasure; repeat for each optic. This estimate is
+        independent of saved/shared converter settings and does not automatically set a
+        game-specific ADS profile.
+      </p>
+    </details>
+  );
 }

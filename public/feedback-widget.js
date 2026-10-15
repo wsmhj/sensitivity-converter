@@ -19,10 +19,10 @@ function normalizeDomain(hostname) {
 
 async function submitFeedback({ content, pageUrl } = {}) {
   if (typeof content !== 'string' || !content.trim() || [...content.trim()].length > 5000) {
-    throw new Error('请填写 1–5000 字的Your feedback。');
+    throw new Error('Please enter feedback between 1 and 5,000 characters.');
   }
   // Remove URL queries/fragments to avoid collecting tokens or personal query data.
-  let cleanUrl = null;
+  let cleanUrl;
   let domain;
   const sourceUrl = pageUrl === undefined ? globalThis.location?.href : pageUrl;
   if (sourceUrl) {
@@ -31,7 +31,7 @@ async function submitFeedback({ content, pageUrl } = {}) {
     cleanUrl = parsed.origin + parsed.pathname;
     domain = normalizeDomain(parsed.hostname);
     if (cleanUrl.length > 2048) throw new Error('The page address is too long.');
-  } else throw new Error('无法识别当前页面，请在 HTTP/HTTPS 网页中Send feedback。');
+  } else throw new Error('Unable to identify this page. Open an HTTP or HTTPS page to send feedback.');
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15000);
   try {
@@ -58,7 +58,7 @@ async function submitFeedback({ content, pageUrl } = {}) {
     }
     if (!response.ok) throw new Error(`Feedback could not be sent (${response.status}). Please try again later.`);
   } catch (error) {
-    if (error.name === 'AbortError') throw new Error('The request timed out. Please wait before trying again.');
+    if (error.name === 'AbortError') throw new Error('The request timed out. Please wait before trying again.', { cause: error });
     throw error;
   } finally {
     clearTimeout(timeout);

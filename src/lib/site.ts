@@ -1,1 +1,8 @@
-export const site = { name:'Turnmatch', title:'Sensitivity Converter — CS2, Valorant, DPI & cm/360 | Turnmatch', description:'Use this mouse sensitivity converter for CS2, Valorant and other supported FPS profiles. Match cm/360, change DPI, and verify your settings with clear formulas.', origin:process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000', email:process.env.NEXT_PUBLIC_CONTACT_EMAIL || '' };
+import { resolveSiteConfig } from './site-config';
+export const site = {
+  name: 'Turnmatch',
+  title: 'Sensitivity Converter — CS2, Valorant, DPI & cm/360 | Turnmatch',
+  description:
+    'Convert mouse sensitivity between supported FPS games, change DPI, and match cm/360. Check the formula and try your setup in a free practice range.',
+  ...resolveSiteConfig(process.env),
+};

@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-15T11:02:11.711Z",
+  "origin": "http://127.0.0.1:3000",
+  "attachments": [
+    {
+      "kind": "report",
+      "status": 200,
+      "filename": "turnmatch-sensitivity-report.txt",
+      "bytes": 762
+    },
+    {
+      "kind": "csv",
+      "status": 200,
+      "filename": "turnmatch-comparison.csv",
+      "bytes": 918
+    },
+    {
+      "kind": "profiles",
+      "status": 200,
+      "filename": "turnmatch-profiles.json",
+      "bytes": 526
+    }
+  ],
+  "invalidInput": 400,
+  "foreignOrigin": 403,
+  "productionQAFixture": 404
+}
