@@ -31,6 +31,29 @@
 .practice-launch button {
   flex-shrink: 0;
 }
+.practice-launch-actions {
+  display: grid;
+  gap: 12px;
+  flex-shrink: 0;
+  width: 220px;
+  max-width: 100%;
+}
+.practice-launch-actions button {
+  width: 100%;
+  min-height: 48px;
+}
+.practice-launch .feedback-open-button {
+  background: #f6cf82;
+  border-color: #f6cf82;
+  color: #302313;
+  font-size: 14px;
+  font-weight: 700;
+}
+.practice-launch .feedback-open-button:hover:not(:disabled) {
+  background: #ffe0a3;
+  border-color: #ffe0a3;
+  color: #302313;
+}
 .practice-launch .action-primary,
 html[data-theme='dark'] .practice-launch .action-primary {
   background: var(--practice-accent);
@@ -223,6 +246,9 @@ html[data-theme='dark'] .practice-launch .action-primary {
     flex-direction: column;
     align-items: stretch;
   }
+  .practice-launch-actions {
+    width: 100%;
+  }
   .aim-dialog {
     padding: 16px;
     width: calc(100vw - 16px);
@@ -358,6 +384,21 @@ html[data-theme='dark'] .practice-launch .action-primary {
   height: 100vh;
   border: 0;
   border-radius: 0;
+}
+.aim-exit-fullscreen {
+  display: none;
+}
+.aim-arena:fullscreen .aim-exit-fullscreen {
+  display: block;
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 4;
+  min-height: 44px;
+  padding: 10px 16px;
+  background: #faf8ff;
+  color: #292838;
+  border: 1px solid #c6c3d3;
 }
 .aim-arena:fullscreen canvas {
   width: 100%;

@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import BrandMark from '@/components/brand-mark';
 export const alt = 'Sensitivity Converter — same physical turn distance, another game';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
@@ -16,7 +17,17 @@ export default function Image() {
         color: '#232323',
       }}
     >
-      <div style={{ display: 'flex', fontSize: 30, fontWeight: 700, color: '#3454d1' }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 20,
+          fontSize: 30,
+          fontWeight: 700,
+          color: '#292722',
+        }}
+      >
+        <BrandMark size={64} />
         sensitivityconverter.me
       </div>
       <div
@@ -31,8 +42,8 @@ export default function Image() {
         style={{
           display: 'flex',
           marginTop: 48,
-          background: '#edf0fc',
-          color: '#3454d1',
+          background: '#e6e0d4',
+          color: '#292722',
           padding: '26px 32px',
           borderRadius: 4,
           alignItems: 'center',

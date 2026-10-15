@@ -1,0 +1,33 @@
+{
+  "url": "http://127.0.0.1:3000/",
+  "checkedAt": "2026-10-15T13:38:04.851155+00:00",
+  "keyword": "Sensitivity Converter",
+  "formula": "case-insensitive exact phrase occurrences / word count * 100",
+  "scope": "Server-rendered body text including collapsed descriptions; scripts, styles, templates, noscript and head metadata excluded. No multiplication by phrase length. Dynamic user states may differ.",
+  "wordPattern": "[A-Za-z0-9]+(?:['’-][A-Za-z0-9]+)*",
+  "before": {
+    "words": 3192,
+    "occurrences": 20,
+    "densityPercent": 0.6266
+  },
+  "after": [
+    {
+      "scope": "body",
+      "words": 2761,
+      "occurrences": 86,
+      "densityPercent": 3.1148
+    },
+    {
+      "scope": "main",
+      "words": 2725,
+      "occurrences": 84,
+      "densityPercent": 3.0826
+    },
+    {
+      "scope": "article",
+      "words": 1553,
+      "occurrences": 77,
+      "densityPercent": 4.9581
+    }
+  ]
+}

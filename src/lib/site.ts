@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { resolveSiteConfig } from './site-config';
 export const site = {
   name: 'Sensitivity Converter',
-  title: 'Sensitivity Converter — Free Mouse & DPI Calculator',
+  title: 'Sensitivity Converter — Game, Mouse DPI & Aim Calculator',
   description:
     'Free mouse sensitivity converter for CS2, VALORANT, Fortnite, Apex Legends and more. Match cm/360, convert DPI, check eDPI and save your PC game settings.',
   ...resolveSiteConfig(process.env),

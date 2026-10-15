@@ -91,6 +91,8 @@ export default function AimTrainer({
     if (['playing', 'countdown', 'paused'].includes(s.phase)) aimEvent('abandoned', s.run.mode);
     aimEvent('closed', s.run.mode);
     pause();
+    if (document.fullscreenElement && dialog.current?.contains(document.fullscreenElement))
+      void document.exitFullscreen().catch(() => {});
     onClose();
   }
   async function start() {
@@ -352,6 +354,8 @@ export default function AimTrainer({
       document.removeEventListener('visibilitychange', hidden);
       window.removeEventListener('blur', blurred);
       if (document.pointerLockElement === c) document.exitPointerLock();
+      if (document.fullscreenElement && d.contains(document.fullscreenElement))
+        void document.exitFullscreen().catch(() => {});
       d.close();
     };
   }, [name, result.targetSens, result.yawTo, result.dpiTo, settings.to]);
@@ -471,6 +475,20 @@ export default function AimTrainer({
           aria-label="3D mouse aiming practice. Move the mouse to aim and left-click to shoot. Escape pauses."
         />
         <RangeHud displayRef={hudDisplay} />
+        <button
+          type="button"
+          className="aim-exit-fullscreen"
+          onClick={async () => {
+            pause();
+            try {
+              await document.exitFullscreen();
+            } catch {
+              setError('Press Escape to exit fullscreen.');
+            }
+          }}
+        >
+          Exit fullscreen
+        </button>
         {(phase === 'ready' || phase === 'paused' || phase === 'finished') && (
           <div className="aim-overlay">
             <strong>

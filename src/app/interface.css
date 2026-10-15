@@ -22,8 +22,8 @@ body {
   letter-spacing: -1.2px;
 }
 .brand svg {
-  width: 27px;
-  height: 27px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
 }
 .brand-name {
@@ -33,7 +33,11 @@ body {
   letter-spacing: -0.5px;
 }
 .brand-name > span:last-child {
-  color: var(--accent);
+  color: var(--muted);
+}
+html[data-theme='dark'] .brand svg {
+  border-radius: 13px;
+  outline: 1px solid #706a60;
 }
 .header-inner nav {
   font-size: 14px;

@@ -1,13 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-export function Mark() {
-  return (
-    <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <path d="M4 10h23m-6-6 6 6-6 6M28 22H5m6-6-6 6 6 6" stroke="currentColor" strokeWidth="2.4" />
-    </svg>
-  );
-}
+import BrandMark from './brand-mark';
 export default function Shell() {
   const [dark, setDark] = useState(false);
   useEffect(() => {
@@ -33,7 +27,7 @@ export default function Shell() {
     <header className="site-header">
       <div className="header-inner">
         <Link href="/" className="brand" aria-label="Sensitivity Converter home">
-          <Mark />
+          <BrandMark />
           <span className="brand-name">
             <span>Sensitivity</span> <span>Converter</span>
           </span>
@@ -60,7 +54,7 @@ export function Footer() {
     <footer className="site-footer">
       <div>
         <Link href="/" className="brand">
-          <Mark />
+          <BrandMark />
           <span className="brand-name">
             <span>Sensitivity</span> <span>Converter</span>
           </span>
