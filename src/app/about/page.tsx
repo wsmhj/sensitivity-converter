@@ -1,16 +1,17 @@
 import { pageMetadata } from '@/lib/site';
 export const metadata = pageMetadata(
   'About Our Mouse Sensitivity Calculator',
-  'Learn how Turnmatch converts PC mouse sensitivity using DPI, yaw and cm/360, with documented game profiles, formulas and clear limits.',
+  'Learn how Sensitivity Converter converts PC mouse sensitivity using DPI, yaw and cm/360, with documented game profiles, formulas and clear limits.',
   '/about',
 );
 export default function About() {
   return (
     <article className="info-page">
-      <h1>About Turnmatch</h1>
+      <h1>About Sensitivity Converter</h1>
       <p>
-        Turnmatch is an independent PC mouse sensitivity reference tool. It connects documented
-        linear game scales through physical turn distance, with explicit DPI and yaw inputs.
+        Sensitivity Converter is an independent PC mouse sensitivity reference tool. It connects
+        documented linear game scales through physical turn distance, with explicit DPI and yaw
+        inputs.
       </p>
       <h2>Check the assumptions</h2>
       <p>
@@ -25,7 +26,7 @@ export default function About() {
         multipliers. Verify your result in a practice area.
       </p>
       <p>
-        Turnmatch is not affiliated with the named games or their publishers.{' '}
+        Sensitivity Converter is not affiliated with the named games or their publishers.{' '}
         <a href="/#sources">Read the sources and assumptions</a>.
       </p>
     </article>

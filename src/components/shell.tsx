@@ -32,10 +32,10 @@ export default function Shell() {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link href="/" className="brand" aria-label="Turnmatch home">
+        <Link href="/" className="brand" aria-label="Sensitivity Converter home">
           <Mark />
-          <span>
-            turnmatch<span className="brand-dot">.</span>
+          <span className="brand-name">
+            <span>Sensitivity</span> <span>Converter</span>
           </span>
         </Link>
         <nav aria-label="Main navigation">
@@ -61,7 +61,9 @@ export function Footer() {
       <div>
         <Link href="/" className="brand">
           <Mark />
-          <span>turnmatch.</span>
+          <span className="brand-name">
+            <span>Sensitivity</span> <span>Converter</span>
+          </span>
         </Link>
         <p>Different game. Same starting point. Make the switch with confidence.</p>
       </div>

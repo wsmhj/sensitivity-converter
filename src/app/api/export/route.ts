@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     const profiles = parseBackup(form.get('payload') || '');
     if (!profiles) return new Response('Invalid profile backup', { status: 400 });
     text = JSON.stringify({ version: 1, profiles }, null, 2);
-    name = 'turnmatch-profiles.json';
+    name = 'sensitivity-converter-profiles.json';
     type = 'application/json';
   } else {
     const s = decodeSettings(form.get('payload') || '');
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
     const r = outcome.result;
     if (kind === 'report') {
       text = report(s, r);
-      name = 'turnmatch-sensitivity-report.txt';
+      name = 'sensitivity-converter-report.txt';
       type = 'text/plain';
     } else if (kind === 'csv') {
       const rows = GAMES.filter((g) => g.id !== 'custom').map((g) => ({
@@ -51,7 +51,7 @@ export async function POST(request: Request) {
             ({ g, value }) => `"${g.name.replaceAll('"', '""')}",${value},${r.dpiTo},${r.sourceCm}`,
           )
           .join('\r\n');
-      name = 'turnmatch-comparison.csv';
+      name = 'sensitivity-converter-comparison.csv';
       type = 'text/csv';
     } else return new Response('Unknown export format', { status: 400 });
   }

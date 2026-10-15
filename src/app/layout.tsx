@@ -9,7 +9,7 @@ import './practice.css';
 export const metadata: Metadata = {
   metadataBase: new URL(site.origin),
   robots: site.indexable ? { index: true, follow: true } : { index: false, follow: false },
-  title: { default: site.title, template: '%s | Turnmatch' },
+  title: { default: site.title, template: `%s | ${site.name}` },
   description: site.description,
   openGraph: {
     title: site.title,

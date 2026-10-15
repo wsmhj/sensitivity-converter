@@ -35,6 +35,6 @@ test('download sends selected payload and validates a real attachment', async ()
       });
     },
   );
-  assert.equal(result.name, 'turnmatch-comparison.csv');
+  assert.equal(result.name, 'sensitivity-converter-comparison.csv');
   assert.match(await result.blob.text(), /CS2,1/);
 });

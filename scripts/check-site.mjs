@@ -70,6 +70,12 @@ for (const asset of assets) {
 const home = pages.get('/');
 const data = JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
 assert.equal(data[0]['@type'], 'WebApplication');
+assert.equal(data[0].name, 'Sensitivity Converter');
+const website = data.find((item) => item['@type'] === 'WebSite');
+assert.equal(website?.name, 'Sensitivity Converter');
+assert.equal(website?.url, canonicalOrigin);
+const webpage = data.find((item) => item['@type'] === 'WebPage');
+assert.ok(webpage?.dateModified && home.includes(`dateTime="${webpage.dateModified}"`));
 assert.equal(data[1].mainEntity.length, 11);
 for (const item of data[1].mainEntity) {
   assert.ok(home.includes(item.name), 'FAQ schema question must be rendered');
@@ -90,7 +96,7 @@ const result = {
   pages: checks,
   internalLinks,
   assets: assets.size,
-  schema: 'WebApplication + 11 FAQ entries',
+  schema: 'WebSite + WebPage + WebApplication + 11 FAQ entries',
   missingRoute: 404,
 };
 await writeFile('docs/qa/http-seo-checks.json', JSON.stringify(result, null, 2));

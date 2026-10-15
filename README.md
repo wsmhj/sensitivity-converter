@@ -1,4 +1,4 @@
-# Turnmatch
+# Sensitivity Converter
 
 A PC mouse sensitivity converter with 17 documented reference profiles, custom yaw, dual DPI, cm/360, horizontal screen-distance matching, local profiles and a practice range.
 

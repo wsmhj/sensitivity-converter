@@ -1,7 +1,7 @@
 import { pageMetadata } from '@/lib/site';
 export const metadata = pageMetadata(
   'Terms of Use',
-  'Read the terms for using Turnmatch, including sensitivity reference limits, saved settings and verification of results in your game.',
+  'Read the terms for using Sensitivity Converter, including sensitivity reference limits, saved settings and verification of results in your game.',
   '/terms',
 );
 export default function Terms() {
@@ -11,8 +11,8 @@ export default function Terms() {
       <p>Last updated October 14, 2026.</p>
       <h2>A reference calculation</h2>
       <p>
-        Turnmatch provides mathematical conversions under the assumptions shown in the tool.
-        Profiles, game behavior and hardware settings may change. Check the selected scale and
+        Sensitivity Converter provides mathematical conversions under the assumptions shown in the
+        tool. Profiles, game behavior and hardware settings may change. Check the selected scale and
         verify the physical result before relying on it.
       </p>
       <h2>Limits</h2>

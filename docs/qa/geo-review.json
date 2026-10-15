@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-15",
+  "brand": "Sensitivity Converter",
+  "auditedUrl": "http://127.0.0.1:3000/#practice",
+  "productionOrigin": "https://sensitivityconverter.me",
+  "fixed": [
+    "Public brand copy and metadata",
+    "WebSite and WebPage schema",
+    "Visible update date matching dateModified",
+    "Sequential headings in rendered HTML"
+  ],
+  "expectedInLocalPreview": [
+    "HTTP",
+    "noindex",
+    "robots Disallow /",
+    "Canonical points to production origin",
+    "Sitemap omitted from preview robots"
+  ],
+  "verifiedProductionBuild": [
+    "HTTPS canonical",
+    "index/follow",
+    "robots Allow /",
+    "Sitemap declaration"
+  ],
+  "notInvented": [
+    "Author identity",
+    "Organization details",
+    "sameAs social profiles",
+    "Authority quotations",
+    "Traffic or AI citation guarantees"
+  ],
+  "notRequiredForGoogleAI": [
+    "llms.txt",
+    "Special AI schema"
+  ],
+  "deployment": "not_deployed",
+  "sources": [
+    "https://developers.google.com/search/docs/appearance/site-names",
+    "https://developers.google.com/search/docs/appearance/ai-features"
+  ]
+}

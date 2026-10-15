@@ -333,7 +333,9 @@ export default function Converter({
     const imported = parseBackup(text);
     if (!imported) {
       featureEvent('profile_import', 'error', { error_code: 'invalid_backup' });
-      profileStatus('Invalid backup: use a Turnmatch version 1 JSON file with valid profiles.');
+      profileStatus(
+        'Invalid backup: use a Sensitivity Converter version 1 JSON file with valid profiles.',
+      );
       return;
     }
     if (profiles.length + imported.length > 20) {
@@ -459,6 +461,7 @@ export default function Converter({
         </a>
       </nav>
       <section className="converter" id="converter" aria-label="Mouse sensitivity converter">
+        <h2 className="sr-only">Convert your mouse sensitivity</h2>
         <div className="tool-toolbar">
           <div className="segmented" aria-label="Source input format">
             {(
@@ -866,7 +869,7 @@ export default function Converter({
           </label>
         )}
         <div className="print-report">
-          <h2>Turnmatch sensitivity report</h2>
+          <h2>Sensitivity Converter report</h2>
           {r ? (
             <pre>{report(s, r)}</pre>
           ) : (
@@ -1148,7 +1151,7 @@ export default function Converter({
                 maxLength={50000}
                 value={backupText}
                 onChange={(e) => setBackupText(e.target.value)}
-                placeholder="Paste the complete contents of your Turnmatch JSON backup"
+                placeholder="Paste the complete contents of your Sensitivity Converter JSON backup"
               />
             </label>
             <button

@@ -17,7 +17,7 @@ export default function Home() {
     {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
-      name: 'Turnmatch Sensitivity Converter',
+      name: site.name,
       url: site.origin,
       applicationCategory: 'UtilitiesApplication',
       operatingSystem: 'Any',
@@ -34,6 +34,26 @@ export default function Home() {
         acceptedAnswer: { '@type': 'Answer', text },
       })),
     },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      '@id': `${site.origin}/#website`,
+      name: site.name,
+      alternateName: new URL(site.origin).hostname,
+      url: site.origin,
+      inLanguage: 'en',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': `${site.origin}/#webpage`,
+      url: site.origin,
+      name: site.title,
+      description: site.description,
+      isPartOf: { '@id': `${site.origin}/#website` },
+      dateModified: '2026-10-15',
+      inLanguage: 'en',
+    },
   ];
   return (
     <div className="page-width">
@@ -43,7 +63,7 @@ export default function Home() {
       />
       <section className="hero">
         <div className="hero-copy">
-          <h1>Mouse Sensitivity Converter</h1>
+          <h1>Sensitivity Converter</h1>
           <p>
             Convert your PC mouse settings between games, match cm/360 and adjust for a new DPI.
             Free to use, with no account required.

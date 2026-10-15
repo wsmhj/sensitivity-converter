@@ -369,7 +369,7 @@ export default function AimTrainer({
     >
       <header className="aim-header">
         <div>
-          <span className="section-kicker">TURNMATCH / PRACTICE RANGE</span>
+          <span className="section-kicker">SENSITIVITY CONVERTER / PRACTICE RANGE</span>
           <h2 id="aim-title">Test your setup</h2>
         </div>
         <button

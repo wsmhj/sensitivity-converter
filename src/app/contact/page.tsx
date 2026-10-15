@@ -2,7 +2,7 @@ import { pageMetadata } from '@/lib/site';
 
 export const metadata = pageMetadata(
   'Contact & Conversion Feedback',
-  'Report a mouse sensitivity conversion issue or suggest an improvement through the Turnmatch feedback form. No account or email address is required.',
+  'Report a mouse sensitivity conversion issue or suggest an improvement through the Sensitivity Converter feedback form. No account or email address is required.',
   '/contact',
 );
 

@@ -24,6 +24,16 @@ body {
 .brand svg {
   width: 27px;
   height: 27px;
+  flex-shrink: 0;
+}
+.brand-name {
+  display: grid;
+  font-size: 18px;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+}
+.brand-name > span:last-child {
+  color: var(--accent);
 }
 .header-inner nav {
   font-size: 14px;

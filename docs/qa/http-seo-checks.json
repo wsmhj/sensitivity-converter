@@ -1,40 +1,40 @@
 {
-  "checkedAt": "2026-10-15T11:38:23.150Z",
+  "checkedAt": "2026-10-15T11:45:53.301Z",
   "origin": "http://127.0.0.1:3000",
   "pages": [
     {
       "path": "/",
       "status": 200,
-      "title": "Mouse Sensitivity Converter: CS2 &amp; VALORANT | Turnmatch",
+      "title": "Sensitivity Converter — Free Mouse &amp; DPI Calculator",
       "description": "Free mouse sensitivity converter for CS2, VALORANT, Fortnite, Apex Legends and more. Match cm/360, convert DPI, check eDPI and save your PC game settings.",
       "h1": 1
     },
     {
       "path": "/about",
       "status": 200,
-      "title": "About Our Mouse Sensitivity Calculator | Turnmatch",
-      "description": "Learn how Turnmatch converts PC mouse sensitivity using DPI, yaw and cm/360, with documented game profiles, formulas and clear limits.",
+      "title": "About Our Mouse Sensitivity Calculator | Sensitivity Converter",
+      "description": "Learn how Sensitivity Converter converts PC mouse sensitivity using DPI, yaw and cm/360, with documented game profiles, formulas and clear limits.",
       "h1": 1
     },
     {
       "path": "/contact",
       "status": 200,
-      "title": "Contact &amp; Conversion Feedback | Turnmatch",
-      "description": "Report a mouse sensitivity conversion issue or suggest an improvement through the Turnmatch feedback form. No account or email address is required.",
+      "title": "Contact &amp; Conversion Feedback | Sensitivity Converter",
+      "description": "Report a mouse sensitivity conversion issue or suggest an improvement through the Sensitivity Converter feedback form. No account or email address is required.",
       "h1": 1
     },
     {
       "path": "/privacy",
       "status": 200,
-      "title": "Privacy Policy | Turnmatch",
-      "description": "How Turnmatch handles browser-saved settings, profile backups, shared links, report exports and optional feedback messages.",
+      "title": "Privacy Policy | Sensitivity Converter",
+      "description": "How Sensitivity Converter handles browser-saved settings, profile backups, shared links, report exports and optional feedback messages.",
       "h1": 1
     },
     {
       "path": "/terms",
       "status": 200,
-      "title": "Terms of Use | Turnmatch",
-      "description": "Read the terms for using Turnmatch, including sensitivity reference limits, saved settings and verification of results in your game.",
+      "title": "Terms of Use | Sensitivity Converter",
+      "description": "Read the terms for using Sensitivity Converter, including sensitivity reference limits, saved settings and verification of results in your game.",
       "h1": 1
     },
     {
@@ -55,6 +55,6 @@
   ],
   "internalLinks": 72,
   "assets": 13,
-  "schema": "WebApplication + 11 FAQ entries",
+  "schema": "WebSite + WebPage + WebApplication + 11 FAQ entries",
   "missingRoute": 404
 }

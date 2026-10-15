@@ -1,3 +1,15 @@
+# 2026-10-15 品牌确认与GEO报告核查
+
+用户明确网站名称就是Sensitivity Converter，不使用Turnmatch。对外页眉/页脚/H1/title/描述/OG/schema/关于页/练习场标识/报表和下载文件名已统一。旧turnmatch本地存储键、分析服务ID及TURNMATCH_DEPLOYMENT环境名保留兼容，避免已有配置丢失或分析服务失联；不属于对外品牌文案。
+
+桌面“新建 文本文档.txt”内容已被用户替换为AITDK GEO报告，当前不再是关键词清单。报告检查的是http://127.0.0.1:3000/#practice。HTTP、本地noindex/robots拦截、canonical指向正式站和本地robots不列sitemap均属于环境差异；正式构建已验证HTTPS canonical、index/follow、allow与sitemap。未部署，线上HTTPS/抓取仍须上线后核验。
+
+补充真实WebSite/WebPage schema，站名Sensitivity Converter、备用名sensitivityconverter.me、dateModified与可见time均为本次实际修改日2026-10-15。新增转换区域H2，静态HTML标题层级检查无跳级。未虚构组织、作者、社交sameAs或权威引述。llms.txt并非Google AI展示必要条件，本轮未为插件分数添加。引用率增幅等插件数字未经验证，不作为承诺。
+
+63项测试、lint/typecheck、正式及本地构建、元数据/链接/JSON-LD、TXT/CSV/JSON导出均通过。本地预览3000继续运行。原有浏览器视觉检查不可用限制仍在。
+
+---
+
 # 2026-10-15 最新：SEO文案与元数据
 
 根据用户提供的100条关键词核对现有功能：39条覆盖支持的搜索意图，6条需要限定条件，55条不适用。逐条决策见docs/seo-keyword-audit.json；这些数字不是搜索量或排名预测。未新增游戏预设，不将自定义yaw等同于原生支持，不宣传手柄/PS5/主机或通用ADS转换。

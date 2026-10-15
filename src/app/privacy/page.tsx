@@ -1,7 +1,7 @@
 import { pageMetadata } from '@/lib/site';
 export const metadata = pageMetadata(
   'Privacy Policy',
-  'How Turnmatch handles browser-saved settings, profile backups, shared links, report exports and optional feedback messages.',
+  'How Sensitivity Converter handles browser-saved settings, profile backups, shared links, report exports and optional feedback messages.',
   '/privacy',
 );
 export default function Privacy() {

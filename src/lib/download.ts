@@ -1,8 +1,8 @@
 export type ExportKind = 'report' | 'csv' | 'profiles';
 const formats = {
-  report: { name: 'turnmatch-sensitivity-report.txt', type: 'text/plain' },
-  csv: { name: 'turnmatch-comparison.csv', type: 'text/csv' },
-  profiles: { name: 'turnmatch-profiles.json', type: 'application/json' },
+  report: { name: 'sensitivity-converter-report.txt', type: 'text/plain' },
+  csv: { name: 'sensitivity-converter-comparison.csv', type: 'text/csv' },
+  profiles: { name: 'sensitivity-converter-profiles.json', type: 'application/json' },
 };
 
 export async function requestExport(

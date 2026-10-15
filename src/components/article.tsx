@@ -50,7 +50,7 @@ export const faqs = [
 const sections = [
   {
     id: 'how-it-works',
-    title: 'How to use the game sensitivity converter',
+    title: 'How do I convert mouse sensitivity between games?',
     parts: [
       [
         'Enter your current setup',
@@ -68,7 +68,7 @@ const sections = [
   },
   {
     id: 'supported-games',
-    title: 'Supported PC games and sensitivity profiles',
+    title: 'Which games does the sensitivity converter support?',
     parts: [
       [
         'CS2 and VALORANT sensitivity converter',
@@ -215,6 +215,9 @@ export default function Article() {
         </a>
       </aside>
       <article className="guide">
+        <p className="micro">
+          Guide updated <time dateTime="2026-10-15">October 15, 2026</time>.
+        </p>
         {sections.map((section) => (
           <section key={section.id} id={section.id}>
             <h2>{section.title}</h2>
